@@ -21,22 +21,19 @@ export default function App() {
 
   const SITE_TITLE = "TEDxCongaree Vista";
 
-useEffect(() => {
-  const titles: Record<Page, string> = {
-    home: "",
-    speakers: "Speakers",
-    sponsors: "Sponsors",
-    support: "Support",
-    news: "News",
-    about: "About",
-  };
+  useEffect(() => {
+    const titles: Record<Page, string> = {
+      home: "",
+      speakers: "Speakers",
+      sponsors: "Sponsors",
+      support: "Support",
+      news: "News",
+      about: "About",
+    };
 
-  const pageTitle = titles[currentPage];
-  document.title = pageTitle
-    ? `${pageTitle} | ${SITE_TITLE}`
-    : SITE_TITLE;
-}, [currentPage]);
-
+    const pageTitle = titles[currentPage];
+    document.title = pageTitle ? `${pageTitle} | ${SITE_TITLE}` : SITE_TITLE;
+  }, [currentPage]);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -59,20 +56,28 @@ useEffect(() => {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-gray-900">
+      {/* Make the app a column so footer can't get clipped by animated container */}
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-black via-black/80 to-black">
+
         <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentPage}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-          >
-            {renderPage()}
-            <Footer />
-          </motion.div>
-        </AnimatePresence>
+
+        {/* Only animate page content */}
+        <main className="flex-1">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentPage}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+            >
+              {renderPage()}
+            </motion.div>
+          </AnimatePresence>
+        </main>
+
+        {/* Footer must live outside AnimatePresence to prevent clipping */}
+        <Footer />
       </div>
     </ThemeProvider>
   );
