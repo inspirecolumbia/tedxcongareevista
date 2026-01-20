@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   // IMPORTANT for GitHub Pages under /tedxcongareevista/
-  base: '/tedxcongareevista/',
+  base: process.env.VERCEL ? '/' : '/tedxcongareevista/',
 
   plugins: [react()],
   resolve: {
