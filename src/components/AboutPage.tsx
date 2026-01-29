@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { Lightbulb, Target, Users, Heart, ArrowRight, Mail } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import './AboutPage.css';
 
 // ✅ Move these images into: src/assets/headshots/team/
 import Shyam from "../assets/headshots/team/shyam.jpg";
@@ -29,8 +30,10 @@ export function AboutPage() {
   ];
 
   // TODO: replace with your real form URL
-  const volunteerFormUrl = "https://YOUR-FORM-LINK-HERE";
-  const teamEmail = "team@tedxcongareevista.com";
+  const volunteerFormUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLScFrVyPWl-e2bKzhG4zqqTGjCIn4XrtUKUvkGjOpkvb5qpxUg/viewform?pli=1";
+
+  const teamEmail = "info@tedxcongareevista.com";
 
   const teamMembers: TeamMember[] = [
     {
@@ -129,7 +132,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 md:p-10 shadow-sm"
+            className="why-tedx-box rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 md:p-10 shadow-sm"
           >
             <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
               <p>
@@ -235,9 +238,9 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start"
+            className="volunteer-section"
           >
-            <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-8 shadow-sm">
+            <div className="volunteer-card rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
               <h2 className="text-3xl md:text-4xl mb-4 text-black dark:text-white">
                 Join us as a <span className="text-[#E62B1E]">Volunteer</span> or <span className="text-[#E62B1E]">Emcee</span>
               </h2>
@@ -246,24 +249,24 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
                 If you are interested in either of these, please fill out this form.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="button-group">
                 <a
                   href={volunteerFormUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#E62B1E] px-5 py-3 text-white font-semibold hover:opacity-90 transition"
+                  className="volunteer-form-btn bg-[#E62B1E] text-white"
                 >
                   Volunteer / Emcee Form <ArrowRight size={18} />
                 </a>
                 <a
                   href={`mailto:${teamEmail}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 dark:border-gray-700 px-5 py-3 text-black dark:text-white font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+                  className="email-btn border-gray-200 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
                 >
                   <Mail size={18} /> Email Us
                 </a>
               </div>
 
-              <p className="text-base text-gray-600 dark:text-gray-400 mt-5">
+              <p className="email-text text-base text-gray-600 dark:text-gray-400">
                 With questions, please email{" "}
                 <a className="text-[#E62B1E] font-semibold" href={`mailto:${teamEmail}`}>
                   {teamEmail}
@@ -272,13 +275,13 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
               </p>
 
               {volunteerFormUrl.includes("YOUR-FORM-LINK-HERE") && (
-                <p className="text-sm text-amber-700 dark:text-amber-400 mt-4">
+                <p className="form-update-warning text-sm text-amber-700 dark:text-amber-400">
                   ⚠️ Update <span className="font-semibold">volunteerFormUrl</span> with your real form link.
                 </p>
               )}
             </div>
 
-            <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-8 shadow-sm">
+            <div className="nonprofit-card rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
               <h3 className="text-2xl md:text-3xl mb-4 text-black dark:text-white">A 100% volunteer-driven nonprofit</h3>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 TEDxCongaree Vista is operated by ChangeMakers Events, a South Carolina 501(c)3 nonprofit and 100% volunteer-driven
@@ -311,7 +314,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
               and connection.
             </p>
             <p>
-              These local, self-organized events are branded TEDx, where x = independently               and independently organized TED event. The TED Conference provides general guidance for the TEDx program, but
+              These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but
               individual TEDx events are self-organized.
             </p>
             <p className="text-center pt-6">
