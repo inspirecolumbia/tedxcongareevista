@@ -94,7 +94,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-white dark:bg-gray-900">
+    <div className="pt-20 min-h-screen bg-transparent">
       {/* Header */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50 dark:from-gray-800 to-white dark:to-gray-900">
         <div className="max-w-7xl mx-auto text-center">
@@ -106,6 +106,26 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
               A locally organized event bringing together our community to share ideas worth spreading
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl mb-6 text-black dark:text-white">Our Organizing Team</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Click a team member to read their bio
+            </p>
+          </motion.div>
+
+          <TeamGridSpeakerStyle teamMembers={teamMembers} />
         </div>
       </section>
 
@@ -207,26 +227,6 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl mb-6 text-black dark:text-white">Our Organizing Team</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              Click a team member to read their bio
-            </p>
-          </motion.div>
-
-          <TeamGridSpeakerStyle teamMembers={teamMembers} />
         </div>
       </section>
 

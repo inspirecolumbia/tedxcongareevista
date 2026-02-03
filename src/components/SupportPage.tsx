@@ -39,9 +39,9 @@ export function SupportPage() {
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-white dark:bg-gray-900">
+    <div className="pt-20 min-h-screen bg-transparent">
       {/* Header */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 dark:from-gray-800 to-white dark:to-gray-900">
+      <section className="py-20 px-4 bg-transparent backdrop-blur-0">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
