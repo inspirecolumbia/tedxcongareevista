@@ -1,29 +1,97 @@
 import { motion } from "motion/react";
 import { Building2, Sparkles, Star } from "lucide-react";
+import theDesignStudio from "../assets/sponsors/theDesignStudio.png";
+import lfted from "../assets/sponsors/lfted.png";
+import betheaFamilyDentistry from "../assets/sponsors/betheaFamilyDentistry.png";
+import dominionEnergy from "../assets/sponsors/dominionEnergy.jpg";
+import caba from "../assets/sponsors/caba.jpg";
+import grace from "../assets/sponsors/grace.png";
+import beyondThe from "../assets/sponsors/beyondThe.png";
+import snaplySites from "../assets/sponsors/snaplySites.png";
+import dnd from "../assets/sponsors/dnd.png";
+import carolinaScreenPrinters from "../assets/sponsors/carolinaScreenPrinters.png";
+import villaTronco from "../assets/sponsors/villaTronco.png";
+import breakPoint from "../assets/sponsors/breakPoint.jpg";
+import noreta from "../assets/sponsors/noreta.jpg";
+import boydInnovation from "../assets/sponsors/boydInnovation.jpg";
+import colaOBO from "../assets/sponsors/colaOBO.jpg";
+import asme from "../assets/sponsors/asme.jpg";
+import cityOfColumbia from "../assets/sponsors/cityOfColumbia.png";
+import cayce from "../assets/sponsors/cayce.png";
+import columbiaConnectors from "../assets/sponsors/columbiaConnectors.png";
+import cor from "../assets/sponsors/cor.png";
+import columbiaChamber from "../assets/sponsors/columbiaChamber.png";
+import colaDaily from "../assets/sponsors/colaDaily.png";
+
+
 
 export function SponsorsPage() {
   const sponsorTiers = [
     {
-      tier: "Platinum Sponsors",
-      icon: Sparkles,
-      color: "bg-gradient-to-br from-gray-100 to-gray-200",
-      sponsors: ["Innovation Partners", "Tech Futures Group"],
+      tier: "ChangeMaker Sponsors",
+      sponsors: [
+        { name: "The Design Studio", logo: theDesignStudio, href: "https://sc.edu/study/colleges_schools/artsandsciences/visual_art_and_design/study/undergraduate/studio_art/graphics/course_experience/design_studio/" },
+        { name: "LFTED Marketing Management", logo: lfted, href: "https://getlfted.com/" },
+      ],
     },
     {
-      tier: "Gold Sponsors",
-      icon: Star,
-      color: "bg-gradient-to-br from-amber-50 to-amber-100",
-      sponsors: ["Creative Solutions Inc", "Vista Development", "Future Minds Foundation"],
+      tier: "Platinum Sponsors",
+      sponsors: [ 
+        { name: "Bethea Family Dentistry", logo: betheaFamilyDentistry, href: "https://betheafamilydentistry.com/" },
+        { name: "Dominion Energy", logo: dominionEnergy, href: "https://www.dominionenergy.com/south-carolina"},
+        { name: "Carolinas AAPI Business Alliance", logo: caba, href: "https://www.cabausa.org/"},
+        { name: "Grace", logo: grace, href: "https://graceoutdoor.com/"},
+
+      ],
     },
     {
       tier: "Silver Sponsors",
-      icon: Building2,
-      color: "bg-gradient-to-br from-slate-50 to-slate-100",
       sponsors: [
-        "Local Business Alliance",
-        "Community First Bank",
-        "Green Energy Solutions",
-        "Digital Marketing Pro",
+        { name: "Beyond The", logo: beyondThe, href: ""},
+        { name: "Snaply Sites", logo: snaplySites, href: "https://snaplysites.com/"},
+        { name: "D. Nichole Davis", logo: dnd, href: "https://www.dnicholedavis.com/"},
+        { name: "Carolina Screen Printers", logo: carolinaScreenPrinters, href: "https://www.carolinascreenprinters.com/"},
+      ],
+    },
+    {
+      tier: "Bronze Sponsors",
+      sponsors: [
+        { name: "Villa Tronco", logo: villaTronco, href: "https://www.villatronco.com/"},
+        { name: "Break Point", logo: breakPoint, href: "https://www.breakpointcola.com/"},
+      ],
+    },
+    {
+      tier: "Production Sponsors",
+      sponsors: [
+        { name: "Noreta", logo: noreta, href: "https://www.noreta.com/"},
+      ],
+    },
+    {
+      tier: "Premium Partners",
+      sponsors: [
+        { name: "Boyd Innovation", logo: boydInnovation, href: "https://www.boydinnovation.org/"},
+        { name: "Columbia OBO", logo: colaOBO, href: "https://www.obo.columbiasc.gov/"},
+        {
+          name: "ASME Columbia Section",
+          logo: asme,
+          href: "https://www.asme.org/communities/sections/columbia-sc",
+        }
+      ],
+    },
+    {
+      tier: "City Partners",
+      sponsors: [
+        { name: "City of Columbia", logo: cityOfColumbia, href: "https://www.columbiasc.gov/"},
+        { name: "Cayce", logo: cayce, href: "https://www.caycesc.gov/"},
+      ],
+    },
+    {
+      tier: "Promotional Partners",
+      sponsors: [
+        { name: "Columbia Connectors", logo: columbiaConnectors, href: "https://www.columbiaconnectors.com/"},
+        { name: "COR", logo: cor, href: "https://www.ourcor.org/"},
+        { name: "Columbia Chamber", logo: columbiaChamber, href: "https://www.columbiachamber.com/"},
+        { name: "Cola Daily", logo: colaDaily, href: "https://www.coladaily.com/"},
       ],
     },
   ];
@@ -50,7 +118,7 @@ export function SponsorsPage() {
 
       {/* Sponsor Tiers */}
       <section className="py-12 px-4 pb-20">
-        <div className="max-w-6xl mx-auto space-y-16">
+        <div className="max-w-7xl mx-auto space-y-16">
           {sponsorTiers.map((tier, tierIndex) => (
             <motion.div
               key={tier.tier}
@@ -59,22 +127,40 @@ export function SponsorsPage() {
               transition={{ delay: 0.2 * tierIndex, duration: 0.6 }}
             >
               <div className="flex items-center justify-center gap-3 mb-8">
-                <tier.icon className="text-[#E62B1E]" size={32} />
                 <h2 className="text-3xl md:text-4xl text-center text-black dark:text-white">{tier.tier}</h2>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Sponsor Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
                 {tier.sponsors.map((sponsor, index) => (
-                  <motion.div
-                    key={sponsor}
-                    initial={{ opacity: 0, scale: 0.9 }}
+                  <motion.a
+                    key={`${tier.tier}-${sponsor.name}`}
+                    href={sponsor.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    initial={{ opacity: 0, scale: 0.96 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.1 * index, duration: 0.4 }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className={`${tier.color} dark:bg-gray-800 dark:border dark:border-gray-700 p-8 rounded-2xl flex items-center justify-center min-h-[160px] cursor-pointer shadow-sm hover:shadow-md transition-shadow`}
+                    transition={{ delay: 0.1 * index, duration: 0.6 }}
+                    whileHover={{ y: -8 }}
+                    className={`
+                      bg-white
+                      dark:bg-white
+                      border border-gray-200
+                      rounded-xl
+                      h-[2800px] w-[200px]
+                      flex items-center justify-center
+                      shadow-sm hover:shadow-md
+                      transition-all
+                    `}
                   >
-                    <h3 className="text-xl text-center text-gray-800 dark:text-gray-200">{sponsor}</h3>
-                  </motion.div>
+                    <div className="w-[220px] h-[100px] flex items-center justify-center">
+                      <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        className="max-h-full max-w-full object-contain scale-110"
+                        loading="lazy"
+                      />
+                    </div>
+                  </motion.a>
                 ))}
               </div>
             </motion.div>
@@ -101,6 +187,8 @@ export function SponsorsPage() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-10 py-4 bg-[#E62B1E] text-white rounded-full hover:bg-[#CC2619] transition-colors"
+            href={"https://drive.google.com/file/d/1W9mbkAPoluSqgIxdvHNCxzdjsKxX8aPG/view"}
+            onClick={() => window.open("https://drive.google.com/file/d/1W9mbkAPoluSqgIxdvHNCxzdjsKxX8aPG/view", "_blank")}
           >
             Sponsorship Opportunities
           </motion.button>
