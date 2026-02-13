@@ -2,6 +2,10 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
+import {ImageWithFallback} from "./figma/ImageWithFallback";
+
+import longLogoWhite from "../assets/longlogo-white.png";
+import longLogoBlack from "../assets/longlogo-black.png";
 
 interface NavigationProps {
   currentPage: string;
@@ -31,17 +35,23 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       <div className="max-w-7xl mx-auto bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-full shadow-lg border border-gray-100 dark:border-gray-800">
         <div className="flex items-center justify-between h-16 px-6 sm:px-8">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="flex-shrink-0 cursor-pointer"
-            onClick={() => onNavigate("home")}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="flex-shrink-0 cursor-pointer flex items-center"
+              onClick={() => onNavigate("home")}
           >
-            <div className="flex items-center gap-2">
-              <div className="text-xl tracking-tight">
-                <span className="text-[#E62B1E]">TEDx</span>
-                <span className="text-black dark:text-white">Congaree Vista</span>
-              </div>
+            <div className="h-8 sm:h-10 overflow-hidden flex items-center min-w-[120px] sm:min-w-[180px]">
+              <ImageWithFallback
+                  src={theme === "dark" ? longLogoWhite : longLogoBlack}
+                  alt="TEDxCongaree Vista logo"
+                  style={{
+                    height: '3rem',
+                    width: 'auto',
+                    display: 'block',
+                    objectFit: 'contain'
+                  }}
+              />
             </div>
           </motion.div>
 
