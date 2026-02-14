@@ -68,7 +68,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             />
 
             {/* readability layer */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/165 via-black/40 to-transparent" />
           </div>
 
           {/* Blend the bottom into your PAGE background colors (light/dark) */}
@@ -103,7 +103,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   "0 4px 8px rgba(0,0,0,0.75), 0 10px 20px rgba(0,0,0,0.6), 0 2px 0 rgba(0,0,0,0.35)",
               }}
             >
-              Bringing <span className="text-[#E62B1E]">TEDx</span> Back to Columbia
+              Bringing TEDx Back to Columbia
             </h1>
 
             <p
