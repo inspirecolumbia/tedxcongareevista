@@ -121,7 +121,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             {/* Tickets CTA */}
               <div className="mt-12 sm:mt-16 flex justify-center">
                 <motion.a
-                  href="https://tickets.coladaily.com/events/tedxcongaree-vista-3-14-2026"
+                  href="https://youtube.com/live/ohZBlkOXFKA?feature=share"
                   target="_blank"
                   rel="noreferrer"
                   whileHover={{ y: -2, scale: 1.02 }}
@@ -141,14 +141,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     transition-all duration-300
                   "
                 >
-                  {/* red glow ring */}
-                  <span
-                    className="
-                      pointer-events-none absolute inset-0 rounded-full
-                      shadow-[0_0_0_1px_rgba(230,43,30,0.55),0_18px_55px_rgba(230,43,30,0.25)]
-                      opacity-80
-                    "
-                  />
                   {/* subtle inner gradient sheen */}
                   <span
                     className="
@@ -158,14 +150,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     "
                   />
                   <span className="relative flex items-center gap-2">
-                    <span
-                      className="text-[#E62B1E]"
-                      style={{ animation: "tedxBlink 1.1s ease-in-out infinite" }}
-                    >
-                      ●
-                    </span>
-                    Get Tickets
-                    <span className="opacity-80">→</span>
+                    Watch live on YouTube
                   </span>
                 </motion.a>
               </div>
