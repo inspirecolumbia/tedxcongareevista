@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Building2, Sparkles, Star } from "lucide-react";
+import { Mail } from "lucide-react";
 import theDesignStudio from "../assets/sponsors/theDesignStudio.png";
 import lfted from "../assets/sponsors/lfted.png";
 import betheaFamilyDentistry from "../assets/sponsors/betheaFamilyDentistry.png";
@@ -96,6 +96,8 @@ export function SponsorsPage() {
     },
   ];
 
+  const email = "sponsorships@tedxcongareevista.com";
+
   return (
     <div className="pt-20 min-h-screen bg-white dark:bg-gray-900">
       {/* Header */}
@@ -152,11 +154,11 @@ export function SponsorsPage() {
                       transition-all
                     `}
                   >
-                    <div className="w-[220px] h-[100px] flex items-center justify-center">
+                    <div className="w-70 h-70 flex items-center justify-center">
                       <img
                         src={sponsor.logo}
                         alt={sponsor.name}
-                        className="max-h-full max-w-full object-contain scale-110"
+                        className="w-full h-full object-cover"
                         loading="lazy"
                       />
                     </div>
@@ -183,15 +185,24 @@ export function SponsorsPage() {
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-10">
             Partner with us to amplify ideas worth spreading and make a lasting impact in our community
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 bg-[#E62B1E] text-white rounded-full hover:bg-[#CC2619] transition-colors"
-            href={"https://drive.google.com/file/d/1W9mbkAPoluSqgIxdvHNCxzdjsKxX8aPG/view"}
-            onClick={() => window.open("https://drive.google.com/file/d/1W9mbkAPoluSqgIxdvHNCxzdjsKxX8aPG/view", "_blank")}
-          >
-            Sponsorship Opportunities
-          </motion.button>
+          <div className="mt-8 flex flex-col items-center gap-4">
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center justify-center px-10 py-4 bg-[#E62B1E] text-white rounded-full hover:bg-[#CC2619] transition-colors"
+              href="https://drive.google.com/file/d/1W9mbkAPoluSqgIxdvHNCxzdjsKxX8aPG/view"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Sponsorship Opportunities
+            </motion.a>
+            <a
+              href={`mailto:${email}`}
+              className="email-btn inline-flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
+            >
+              <Mail size={18} /> Email Us
+            </a>
+          </div>
         </motion.div>
       </section>
     </div>
