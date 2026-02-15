@@ -150,7 +150,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     "
                   />
                   <span className="relative flex items-center gap-2">
-                    Watch live on YouTube
+                    🔴 Watch live on YouTube
                   </span>
                 </motion.a>
               </div>
