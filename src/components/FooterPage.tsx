@@ -141,6 +141,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
+          <br></br>
 
           {/* Right: Newsletter Form */}
           <NewsletterForm />
@@ -173,6 +174,7 @@ export function Footer() {
             </a>
           </div>
         </div>
+        <br></br>
       </div>
     </footer>
   );
