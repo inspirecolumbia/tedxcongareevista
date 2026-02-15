@@ -42,9 +42,9 @@ export function NewsPage() {
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-white dark:bg-gray-900">
+    <div className="pt-20 min-h-screen bg-gradient-to-br from-pink-100 via-purple-100 to-pink-200 dark:bg-gradient-to-br dark:from-violet-950 dark:via-purple-900 dark:to-blue-900">
       {/* Header */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 dark:from-gray-800 to-white dark:to-gray-900">
+      <section className="py-20 px-4 bg-transparent">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ export function NewsPage() {
             transition={{ duration: 0.6 }}
             className="mb-12"
           >
-            <div className="relative overflow-hidden rounded-3xl bg-gray-100 dark:bg-gray-800 group cursor-pointer">
+            <div className="relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800/70 backdrop-blur-sm group cursor-pointer shadow-lg">
               <div className="grid md:grid-cols-2 gap-8">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
@@ -115,7 +115,7 @@ export function NewsPage() {
                 whileHover={{ y: -8 }}
                 className="group cursor-pointer"
               >
-                <div className="relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 aspect-[16/10] mb-4">
+                <div className="relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800/70 backdrop-blur-sm aspect-[16/10] mb-4 shadow-md">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.6 }}
@@ -147,7 +147,7 @@ export function NewsPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 dark:from-gray-800 to-gray-100 dark:to-gray-900">
+      <section className="py-20 px-4 bg-white/50 dark:bg-gray-900/40 backdrop-blur-sm">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
