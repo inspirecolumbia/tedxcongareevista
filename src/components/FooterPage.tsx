@@ -1,178 +1,142 @@
-import { Instagram, Facebook, Linkedin, Youtube, Mail, ArrowRight } from "lucide-react";
-import { useState } from "react";
-import footerLogo from "/assets/footer-logo.png";
-
-// --- Constants ---
-const SOCIALS = [
-  { Icon: Instagram, href: "https://www.instagram.com/tedxcongareevista/", label: "Instagram" },
-  { Icon: Facebook, href: "https://www.facebook.com/TEDxCongareeVista", label: "Facebook" },
-  { Icon: Linkedin, href: "https://www.linkedin.com/company/tedxcongareevista/", label: "LinkedIn" },
-  { Icon: Youtube, href: "https://www.youtube.com/@tedxcongareevista", label: "YouTube" },
-  { Icon: Mail, href: "mailto:info@tedxcongareevista.org", label: "Email" },
-];
-
-const QUICK_LINKS = [
-  { label: "About TED", href: "#about-ted" },
-  { label: "About Us", href: "#about-us" },
-  { label: "Contact Us", href: "#contact" },
-];
-
-// --- Sub-Components ---
-
-function SocialLinks() {
-  return (
-    <div className="mt-4 flex gap-3">
-      {SOCIALS.map(({ Icon, href, label }) => (
-        <a
-          key={label}
-          href={href}
-          aria-label={label}
-          className="
-            h-10 w-10 rounded-full bg-white/10 border border-white/20
-            flex items-center justify-center
-            hover:bg-[#E62B1E] hover:border-[#E62B1E] transition-all
-          "
-        >
-          <Icon className="h-5 w-5 text-white" />
-        </a>
-      ))}
-    </div>
-  );
-}
-
-function NewsletterForm() {
-  const [email, setEmail] = useState("");
-
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // API logic goes here
-    setEmail("");
-  };
-
-  return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <div className="flex flex-col sm:flex-row gap-3 mb-4">
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email address"
-            className="
-              h-11 w-full sm:flex-1 rounded-lg bg-white/10 border border-white/20 px-4
-              text-white placeholder:text-white/45 text-sm
-              focus:outline-none focus:ring-2 focus:ring-[#E62B1E] focus:border-transparent
-            "
-          />
-          <button
-            type="submit"
-            className="
-              h-11 rounded-lg px-4 bg-[#E62B1E] text-white font-medium text-sm
-              hover:bg-[#CC2619] transition-colors
-              inline-flex items-center justify-center gap-2 whitespace-nowrap
-            "
-          >
-            Subscribe <ArrowRight className="h-4 w-4" />
-          </button>
-        </div>
-      </form>
-      <SocialLinks />
-    </div>
-  );
-}
-
-// --- Main Component ---
+import { Instagram, Facebook, Linkedin, Youtube, Mail } from "lucide-react";
+import footerLogo from "../assets/longlogo-black.png";
+import footerLogoDard from "../assets/longlogo-white.png";
+import { motion } from "motion/react";
 
 export function Footer() {
+  const socials = [
+    {
+      Icon: Instagram,
+      href: "https://www.instagram.com/tedxcongareevista/",
+      label: "Instagram",
+    },
+    {
+      Icon: Facebook,
+      href: "https://www.facebook.com/TEDxCongareeVista",
+      label: "Facebook",
+    },
+    {
+      Icon: Linkedin,
+      href: "https://www.linkedin.com/company/tedxcongareevista/",
+      label: "LinkedIn",
+    },
+    {
+      Icon: Youtube,
+      href: "https://www.youtube.com/@tedxcongareevista",
+      label: "YouTube",
+    },
+    { Icon: Mail, href: "mailto:info@tedxcongareevista.org", label: "Email" },
+  ];
+
   return (
-    <footer className="bg-[#0B1220] text-white">
-      {/* Subtle gradient top border */}
-      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <footer className="bg-transparent text-white px-6 pt-10 pb-28">
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="flex flex-col items-center text-center">
+          {/* Logo */}
+          <img
+            src={footerLogo}
+            alt="TEDxCongaree Vista Footer Logo"
+            className="w-full max-w-2xl h-auto object-contain"
+          />
 
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        {/* Top Section: Brand + Stay in Loop Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Left: Logo and Description */}
-          <div>
-            <img
-              src={footerLogo}
-              alt="TEDxCongaree Vista"
-              className="h-12 md:h-14 w-auto object-contain mb-4"
-            />
-            <p className="text-[14px] leading-relaxed text-white/75">
-              TEDxCongaree Vista is an independently organized TEDx event based in Columbia, SC — built to spotlight local ChangeMakers and ideas worth spreading.
-            </p>
-            <p className="mt-3 text-[13px] text-white/60 leading-relaxed">
-              This independent TEDx event is operated under license from{" "}
+          {/* Disclaimer + Copyright */}
+            <div className="mt-4">
+              <p className="text-sm text-black dark:text-gray-300">
+                This independent TEDx event is operated under license from{" "}
+                <a
+                  href="https://www.ted.com/"
+                  className="!underline underline-offset-4"
+                >
+                  TED
+                </a>
+                .
+              </p>
+
+              <p className="text-sm text-black dark:text-gray-300">
+                © 2025{" "}
+                <a
+                  href="https://changemakersevents.org/"
+                  className="!underline underline-offset-4"
+                >
+                  ChangeMakers Events Inc.
+                </a>
+                , a 501(c)3 nonprofit. All rights reserved.
+              </p>
+            </div>
+            <br></br>
+
+          {/* Social Icons */}
+          <div className="mt-24 flex items-center justify-center gap-4">
+            {socials.map(({ Icon, href, label }, i) => (
               <a
-                href="https://www.ted.com/"
-                className="underline underline-offset-4 hover:text-white/80"
+                key={i}
+                href={href}
+                aria-label={label}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#E62B1E] transition hover:scale-110"
               >
-                TED
-              </a>.
-            </p>
-          </div>
-
-          {/* Right: Stay in Loop Header */}
-          <div>
-            <h4 className="text-sm font-semibold tracking-tight text-white mb-4">Stay in the loop</h4>
-            <p className="text-[14px] text-white/75 leading-relaxed">
-              Get updates on speakers, tickets, partners, and event announcements.
-            </p>
-          </div>
-        </div>
-
-        {/* Middle Section: Quick Links + Newsletter Form + Socials */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Left: Quick Links */}
-          <div>
-            <h4 className="text-sm font-semibold tracking-tight text-white mb-4">Quick links</h4>
-            <ul className="space-y-2">
-              {QUICK_LINKS.map((l) => (
-                <li key={l.href}>
-                  <a
-                    href={l.href}
-                    className="text-[14px] text-white/80 hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-2"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+                <Icon className="h-15 w-20" />
+              </a>
+            ))}
           </div>
           <br></br>
 
-          {/* Right: Newsletter Form */}
-          <NewsletterForm />
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between text-[12px]">
-          <p className="text-white/60">
-            © 2026{" "}
+          {/* Links */}
+          <div className="mt-4 flex items-center justify-center gap-6 text-sm text-black dark:text-gray-300">
             <a
-              href="https://changemakersevents.org/"
-              className="underline underline-offset-4 hover:text-white/80"
+              href="https://tedxcongareevista.com/#about-ted"
+              className="underline underline-offset-4 hover:text-gray-200"
             >
-              ChangeMakers Events Inc.
+              About TED
             </a>
-            , a 501(c)3 nonprofit. All rights reserved.
-          </p>
-
-          <div className="flex items-center gap-3 text-white/60">
-            <span className="inline-flex items-center gap-2">
-              <span className="h-[5px] w-[5px] rounded-full bg-[#E62B1E]" />
-              Columbia, South Carolina
-            </span>
-            <span className="text-white/25">•</span>
+            <span className="text-gray-500">•</span>
             <a
-              href="mailto:info@tedxcongareevista.org"
-              className="underline underline-offset-4 hover:text-white/80"
+              href="https://tedxcongareevista.com/#about-us"
+              className="underline underline-offset-4 hover:text-gray-200"
             >
-              info@tedxcongareevista.org
+              About Us
+            </a>
+            <span className="text-gray-500">•</span>
+            <a
+              href="https://tedxcongareevista.com/#contact"
+              className="underline underline-offset-4 hover:text-gray-200"
+            >
+              Contact Us
             </a>
           </div>
+          <br></br>
+
+          {/* Subscribe */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-6 w-full max-w-3xl mx-auto text-center space-y-10"
+          >
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="email"
+                placeholder="Email"
+                className="
+                  flex-1 px-6 py-3 rounded-full
+                  bg-white text-black dark:bg-gray-800 dark:text-white
+                  focus:outline-none focus:ring-2 focus:ring-[#E62B1E]
+                "
+              />
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="
+                  px-8 py-3 rounded-full
+                  bg-white text-[#E62B1E] font-medium
+                  hover:bg-gray-100 transition-colors
+                  whitespace-nowrap dark:bg-gray-800 dark:text-white
+                "
+              >
+                Subscribe
+              </motion.button>
+            </div>
+          </motion.div>
         </div>
         <br></br>
       </div>
