@@ -40,43 +40,45 @@ export function Footer() {
           />
 
           {/* Disclaimer + Copyright */}
-            <div className="mt-4">
-              <p className="text-sm text-black dark:text-gray-300">
-                This independent TEDx event is operated under license from{" "}
-                <a
-                  href="https://www.ted.com/"
-                  className="!underline underline-offset-4"
-                >
-                  TED
-                </a>
-                .
-              </p>
+          <div className="mt-4">
+            <p className="text-sm text-black dark:text-gray-300">
+              This independent TEDx event is operated under license from{" "}
+              <a
+                href="https://www.ted.com/"
+                className="!underline underline-offset-4"
+              >
+                TED
+              </a>
+              .
+            </p>
 
-              <p className="text-sm text-black dark:text-gray-300">
-                © 2025{" "}
-                <a
-                  href="https://changemakersevents.org/"
-                  className="!underline underline-offset-4"
-                >
-                  ChangeMakers Events Inc.
-                </a>
-                , a 501(c)3 nonprofit. All rights reserved.
-              </p>
-            </div>
-            <br></br>
+            <p className="text-sm text-black dark:text-gray-300">
+              © 2025{" "}
+              <a
+                href="https://changemakersevents.org/"
+                className="!underline underline-offset-4"
+              >
+                ChangeMakers Events Inc.
+              </a>
+              , a 501(c)3 nonprofit. All rights reserved.
+            </p>
+          </div>
+          <br></br>
 
           {/* Social Icons */}
-          <div className="mt-24 flex items-center justify-center gap-4">
-            {socials.map(({ Icon, href, label }, i) => (
-              <a
-                key={i}
-                href={href}
-                aria-label={label}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#E62B1E] transition hover:scale-110"
-              >
-                <Icon className="h-15 w-20" />
-              </a>
-            ))}
+          <div className="mt-10 w-full px-4">
+            <div className="flex flex-wrap justify-center gap-4">
+              {socials.map(({ Icon, href, label }, i) => (
+                <a
+                  key={i}
+                  href={href}
+                  aria-label={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#E62B1E] transition hover:scale-110"
+                >
+                  <Icon className="h-15 w-20" />
+                </a>
+              ))}
+            </div>
           </div>
           <br></br>
 
@@ -105,38 +107,21 @@ export function Footer() {
           </div>
           <br></br>
 
-          {/* Subscribe */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mt-6 w-full max-w-3xl mx-auto text-center space-y-10"
-          >
-            <div className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Email"
-                className="
-                  flex-1 px-6 py-3 rounded-full
-                  bg-white text-black dark:bg-gray-800 dark:text-white
-                  focus:outline-none focus:ring-2 focus:ring-[#E62B1E]
-                "
-              />
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="
-                  px-8 py-3 rounded-full
-                  bg-white text-[#E62B1E] font-medium
-                  hover:bg-gray-100 transition-colors
-                  whitespace-nowrap dark:bg-gray-800 dark:text-white
-                "
-              >
-                Subscribe
-              </motion.button>
-            </div>
-          </motion.div>
+          {/* Newsletter Signup */}
+          <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:border-[#E62B1E] focus:outline-none"
+            />
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-[#E62B1E] text-white rounded-full hover:bg-[#CC2619] transition-colors whitespace-nowrap"
+            >
+              Subscribe
+            </motion.button>
+          </div>
         </div>
         <br></br>
       </div>
