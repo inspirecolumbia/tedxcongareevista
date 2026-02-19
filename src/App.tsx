@@ -46,7 +46,8 @@ export default function App() {
       case "support":
         return <SupportPage />;
       case "news":
-        return <NewsPage />;
+        window.location.href = "https://news.tedxcongareevista.com/";
+        return null;
       case "about":
         return <AboutPage />;
       default:
