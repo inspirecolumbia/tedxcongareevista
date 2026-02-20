@@ -112,7 +112,7 @@ export function Footer() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:border-[#E62B1E] focus:outline-none"
+              className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white placeholder-black dark:placeholder-black focus:border-[#E62B1E] focus:outline-none"
             />
             <motion.button
               whileHover={{ scale: 1.05 }}

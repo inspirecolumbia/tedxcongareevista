@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import {ImageWithFallback} from "./figma/ImageWithFallback";
 
@@ -14,7 +14,7 @@ interface NavigationProps {
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   const navItems = [
     { id: "home", label: "Home" },
@@ -79,37 +79,11 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               </motion.button>
             ))}
             
-            {/* Theme Toggle */}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === "light" ? (
-                <Moon size={20} className="text-gray-700 dark:text-gray-300" />
-              ) : (
-                <Sun size={20} className="text-gray-700 dark:text-gray-300" />
-              )}
-            </motion.button>
+            
           </div>
 
           {/* Mobile Menu Button & Theme Toggle */}
           <div className="md:hidden flex items-center gap-2">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === "light" ? (
-                <Moon size={20} className="text-gray-700 dark:text-gray-300" />
-              ) : (
-                <Sun size={20} className="text-gray-700 dark:text-gray-300" />
-              )}
-            </motion.button>
             <button
               className="p-2 text-gray-700 dark:text-gray-300"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
