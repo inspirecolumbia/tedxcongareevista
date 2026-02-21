@@ -8,27 +8,27 @@ const VIDEOS = [
   {
     href: "https://youtu.be/nfvWXBNgobg",
     id: "nfvWXBNgobg",
-    title: "TEDxCongaree Vista – Video 1",
+    title: "Meet the Team!",
   },
   {
     href: "https://www.youtube.com/watch?v=dLq_kUdfb9M",
     id: "dLq_kUdfb9M",
-    title: "TEDxCongaree Vista – Video 2",
+    title: "Do people in Columbia, SC know about TEDx? | Part 1",
   },
   {
     href: "https://www.youtube.com/watch?v=AwS1o-OA_-s",
     id: "AwS1o-OA_-s",
-    title: "TEDxCongaree Vista – Video 3",
+    title: "Live on Wis 10!",
   },
   {
     href: "https://www.youtube.com/watch?v=6Yj4aHgXcKE",
     id: "6Yj4aHgXcKE",
-    title: "TEDxCongaree Vista – Video 4",
+    title: "Do people in Columbia, SC know about TEDx? | Part 2",
   },
   {
     href: "https://www.youtube.com/watch?v=PYfPmI1uQdo",
     id: "PYfPmI1uQdo",
-    title: "TEDxCongaree Vista – Video 5",
+    title: "Speaker meet & greet!",
   },
 ];
 

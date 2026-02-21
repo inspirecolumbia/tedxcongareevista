@@ -103,7 +103,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   "0 4px 8px rgba(0,0,0,0.75), 0 10px 20px rgba(0,0,0,0.6), 0 2px 0 rgba(0,0,0,0.35)",
               }}
             >
-              Bringing TEDx Back to Columbia
+              Bringing <span className="font-black text-[#E62B1E]" style={{ fontFamily: '"Helvetica Neue", Helvetica, sans-serif', letterSpacing: '-0.02em' }}>TEDx</span> Back to Columbia
             </h1>
 
             <p
