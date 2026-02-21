@@ -137,7 +137,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl mb-6 text-black">Our Organizing Team</h2>
+            <h2 className="text-4xl md:text-5xl mb-6 text-black dark:text-white">Our Organizing Team</h2>
           </motion.div>
 
           <TeamGridSpeakerStyle teamMembers={teamMembers} />
@@ -145,7 +145,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
       </section>
 
       {/* Our Values */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -154,8 +154,8 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl mb-6 text-black">Our Values</h2>
-            <p className="text-xl text-gray-600">The principles that guide everything we do</p>
+            <h2 className="text-4xl md:text-5xl mb-6 text-black dark:text-white">Our Values</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">The principles that guide everything we do</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -167,7 +167,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * index, duration: 0.6 }}
                 whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-800"
               >
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -176,8 +176,8 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
                 >
                   <value.icon className="text-white" size={28} />
                 </motion.div>
-                <h3 className="text-2xl mb-3 text-black">{value.title}</h3>
-                <p className="text-gray-600 text-lg">{value.description}</p>
+                <h3 className="text-2xl mb-3 text-black dark:text-white">{value.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-lg">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -185,7 +185,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
       </section>
 
       {/* Volunteers CTA + Nonprofit Info */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 dark:from-gray-800 to-white dark:to-gray-900">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -194,11 +194,11 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
             transition={{ duration: 0.8 }}
             className="volunteer-section"
           >
-            <div className="volunteer-card rounded-2xl border border-gray-200 bg-white\">
-              <h2 className="text-3xl md:text-4xl mb-4 text-black">
+            <div className="volunteer-card rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+              <h2 className="text-3xl md:text-4xl mb-4 text-black dark:text-white">
                 Join us as a <span className="text-[#E62B1E]">Volunteer</span> or <span className="text-[#E62B1E]">Emcee</span>
               </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                 We are looking for additional volunteers and emcees to join our team for the day of the event!
                 If you are interested in either of these, please fill out this form.
               </p>
@@ -214,13 +214,13 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
                 </a>
                 <a
                   href={`mailto:${teamEmail}`}
-                  className="email-btn border-gray-200 text-black hover:bg-gray-50"
+                  className="email-btn border-gray-200 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
                 >
                   <Mail size={18} /> Email Us
                 </a>
               </div>
 
-              <p className="email-text text-base text-gray-600">
+              <p className="email-text text-base text-gray-600 dark:text-gray-400">
                 With questions, please email{" "}
                 <a className="text-[#E62B1E] font-semibold" href={`mailto:${teamEmail}`}>
                   {teamEmail}
@@ -229,9 +229,9 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
               </p>
             </div>
 
-            <div className="nonprofit-card rounded-2xl border border-gray-200 bg-white\">
-              <h3 className="text-2xl md:text-3xl mb-4 text-black">A 100% volunteer-driven nonprofit</h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
+            <div className="nonprofit-card rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+              <h3 className="text-2xl md:text-3xl mb-4 text-black dark:text-white">A 100% volunteer-driven nonprofit</h3>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 TEDxCongaree Vista is operated by ChangeMakers Events, a South Carolina 501(c)3 nonprofit and 100% volunteer-driven
                 organization. Our team dedicates time, energy, and creativity to build a platform that brings people together
                 through the power of change. Funds raised through sponsorships and ticket sales stay right here in the local
@@ -244,7 +244,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
       </section>
 
       {/* TED Info */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-gray-100">
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 dark:from-gray-800 to-gray-100 dark:to-gray-900">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -252,10 +252,10 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl mb-8 text-center text-black">
+          <h2 className="text-4xl md:text-5xl mb-8 text-center text-black dark:text-white">
             About <span className="text-[#E62B1E]">TEDx</span>
           </h2>
-          <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+          <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
             <p>
               In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together
               to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion
@@ -265,7 +265,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
               These local, self-organized events are branded TEDx, where x = independently organized TED event.               The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized.
             </p>
             <p className="text-center pt-6">
-              <span className="text-black">
+              <span className="text-black dark:text-white">
                 TED is a nonprofit organization devoted to Ideas Worth Spreading, usually in the form of short, powerful talks
                 (18 minutes or fewer).
               </span>
@@ -323,7 +323,7 @@ function TeamGridSpeakerStyle({ teamMembers }: { teamMembers: TeamMember[] }) {
                   className="w-full text-left outline-none"
                   aria-expanded={isActive}
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-square mb-4">
+                  <div className="relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 aspect-square mb-4">
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.6 }}
@@ -348,8 +348,8 @@ function TeamGridSpeakerStyle({ teamMembers }: { teamMembers: TeamMember[] }) {
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{member.role}</p>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">{member.name}</h3>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{member.role}</p>
                 </motion.button>
 
                 {/* Inline Bio (push) */}
@@ -364,10 +364,10 @@ function TeamGridSpeakerStyle({ teamMembers }: { teamMembers: TeamMember[] }) {
                   className="overflow-hidden"
                 >
                   {isActive && (
-                    <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-                      <h4 className="text-lg font-semibold text-black">{member.name}</h4>
+                    <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 shadow-sm">
+                      <h4 className="text-lg font-semibold text-black dark:text-white">{member.name}</h4>
                       <p className="text-[#E62B1E] font-medium mb-3">{member.role}</p>
-                      <p className="text-base text-gray-700 whitespace-pre-line leading-relaxed">
+                      <p className="text-base text-gray-700 dark:text-gray-300 whitespace-pre-line leading-relaxed">
                         {member.bio}
                       </p>
                     </div>

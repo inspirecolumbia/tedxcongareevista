@@ -79,6 +79,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 "linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--bg-l-2) 55%, var(--bg-l-3) 100%)",
             }}
           />
+          <div
+            className="absolute inset-x-0 bottom-0 h-72 sm:h-80 hidden dark:block"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--bg-d-2) 55%, var(--bg-d-3) 100%)",
+            }}
+          />
         </motion.div>
 
         <div className="relative z-10 h-full flex items-center justify-center px-4">
@@ -124,8 +131,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     px-10 sm:px-12 py-4
                     rounded-full
                     text-base sm:text-lg font-semibold tracking-wide
-                    text-black
-                    bg-white
+                    text-black dark:text-white
+                    bg-white dark:bg-gray-900
                     border border-white/20
                     backdrop-blur-md
                     shadow-[0_18px_55px_rgba(0,0,0,0.35)]
@@ -166,7 +173,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               
     
               // raised shadow like your About box
-              "shadow-[0_18px_55px_rgba(0,0,0,0.16)]",
+              "shadow-[0_18px_55px_rgba(0,0,0,0.16)] dark:shadow-[0_22px_70px_rgba(0,0,0,0.55)]",
               "p-8 sm:p-10 md:p-12",
             ].join(" ")}
           >
@@ -182,8 +189,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   className={[
                     "text-center p-8 rounded-2xl",
                     // slightly tinted inner tiles (still solid, not transparent)
-                    "bg-gray-50",
-                    "border border-gray-200",
+                    "bg-gray-50 dark:bg-gray-800",
+                    "border border-gray-200 dark:border-gray-700",
                     "shadow-sm hover:shadow-md transition-all",
                     "outline-none",
                     stat.type !== "text" ? "cursor-pointer" : "cursor-default",
@@ -197,8 +204,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <stat.icon className="text-white" size={28} />
                   </motion.div>
 
-                  <h3 className="text-gray-600 mb-2">{stat.label}</h3>
-                  <p className="text-2xl text-black">{stat.value}</p>
+                  <h3 className="text-gray-600 dark:text-gray-300 mb-2">{stat.label}</h3>
+                  <p className="text-2xl text-black dark:text-white">{stat.value}</p>
                 </motion.button>
               ))}
             </div>
