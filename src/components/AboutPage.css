@@ -1,6 +1,105 @@
 /* AboutPage.css */
 
 /* =========================
+   WHY TEDx HERO (matches your screenshot)
+   - gradient background
+   - centered title
+   - readable narrow column
+   - white text
+   - generous spacing
+   ========================= */
+
+.about-hero {
+  position: relative;
+  padding: 1.5rem 0 6rem;
+
+  /* Main gradient */
+  background: linear-gradient(100deg, #7a1c5c 0%, #5b2c91 45%, #1e3a8a 100%);
+
+  color: #fff;
+  overflow: hidden;
+}
+
+
+
+.about-hero::before {
+  /* subtle bloom to make it feel premium */
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background:
+    radial-gradient(900px 520px at 18% 18%, rgba(255, 255, 255, 0.10), transparent 60%),
+    radial-gradient(900px 520px at 82% 18%, rgba(255, 255, 255, 0.06), transparent 62%),
+    radial-gradient(700px 420px at 50% 105%, rgba(0, 0, 0, 0.22), transparent 60%);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.about-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.about-hero-title {
+  font-size: clamp(2.6rem, 4vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 auto 1rem;
+  color: #fff;
+}
+
+.about-hero-subtitle {
+  max-width: 52rem;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.about-hero-divider {
+  width: 90px;
+  height: 2px;
+  margin: 2.25rem auto 2.75rem;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+}
+
+/* the paragraph block itself (no "card", just text spacing) */
+.about-hero-copy {
+  max-width: 52rem;
+  margin: 0 auto;
+  text-align: left;
+
+  white-space: pre-line;
+
+  font-size: 1.0rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* enforce paragraph rhythm even though it's pre-line text */
+.about-hero-copy::first-line {
+  /* (kept neutral; you can remove if you don’t want it) */
+}
+
+/* Add extra breathing room between "paragraphs" (blank lines) */
+.about-hero-copy {
+  /* nothing else needed: blank lines in the template string create the spacing */
+}
+
+/* Slightly bigger on desktop */
+@media (min-width: 768px) {
+  .about-hero {
+    padding: 7.5rem 0 7rem;
+  }
+  .about-hero-copy {
+    font-size: 1.04rem;
+    line-height: 1.7;
+  }
+}
+
+/* =========================
    Volunteer & Nonprofit Section Styling (Upgraded)
    - "Violet/Purple" premium look
    - Responsive
@@ -153,6 +252,7 @@
   }
 }
 
+/* Legacy class kept (safe) — not used in new layout but harmless */
 .why-tedx-box {
   position: relative;
   overflow: hidden;

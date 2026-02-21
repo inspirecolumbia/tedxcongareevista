@@ -29,7 +29,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-transparent text-white px-6 pt-10 pb-28">
+    <footer className="bg-white/10 dark:bg-gray-900/30 text-white px-6 pt-10 pb-28 backdrop-blur-sm">
       <div className="mx-auto w-full max-w-6xl">
         <div className="flex flex-col items-center text-center">
           {/* Logo */}

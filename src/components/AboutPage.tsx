@@ -1,8 +1,9 @@
+// AboutPage.tsx
 import { useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { Lightbulb, Target, Users, Heart, ArrowRight, Mail } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import './AboutPage.css';
+import "./AboutPage.css";
 
 // ✅ Move these images into: src/assets/headshots/team/
 import Shyam from "../assets/headshots/team/shyam.jpg";
@@ -29,11 +30,22 @@ export function AboutPage() {
     { icon: Heart, title: "Passion", description: "We're driven by genuine enthusiasm for ideas that inspire and transform" },
   ];
 
-  // TODO: replace with your real form URL
   const volunteerFormUrl =
-  "https://docs.google.com/forms/d/e/1FAIpQLScFrVyPWl-e2bKzhG4zqqTGjCIn4XrtUKUvkGjOpkvb5qpxUg/viewform?pli=1";
+    "https://docs.google.com/forms/d/e/1FAIpQLScFrVyPWl-e2bKzhG4zqqTGjCIn4XrtUKUvkGjOpkvb5qpxUg/viewform?pli=1";
 
   const teamEmail = "info@tedxcongareevista.com";
+
+  const whyTedxCopy = `TEDxCongaree Vista reflects not just the location of Columbia, but a spirit of connection, creativity, and growth that aligns with the mission of TEDx. Our theme, “ChangeMakers,” showcases local visionaries already making a difference and transforming Columbia through health education, innovative research, tech startups, or grassroots initiatives. We’re spotlighting community-driven ideas that have shown real impact and carry a clear vision for the future.
+
+The name reflects both the cultural identity and geographic heart of Columbia, South Carolina. Together, they symbolize a spirit of connection, progress, and innovation.
+
+TEDxCongaree Vista will expose attendees to new ways of thinking, unique viewpoints, and an interactive atmosphere filled with rich dialogue and activity. We aim to feature thought leaders from diverse fields and foster meaningful exchanges not only between speakers and the audience, but also among community members themselves.
+
+By sharing ideas in this powerful and collaborative format, we will spark local and personal transformation, inspire change across communities, and celebrate how far we’ve come and where we’re going. By supporting us, you become part of a global movement while helping build something deeply local and lasting. You're not just funding a single event, you’re investing in a platform for innovation, inclusion, and impact.
+
+Help us bring the most meaningful TEDx experience to life in the heart of Columbia. TEDxCongaree Vista is more than an event. It’s a reflection of who we are, and who we have the potential to become.
+
+Let’s create something powerful, together.`;
 
   const teamMembers: TeamMember[] = [
     {
@@ -94,17 +106,23 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-transparent">
-      {/* Header */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 dark:from-gray-800 to-white dark:to-gray-900">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <h1 className="text-5xl md:text-6xl mb-6 text-black dark:text-white">
-              <span className="text-[#E62B1E]">About</span> TEDxCongaree Vista
+    <div className="min-h-screen bg-transparent">
+      {/* HERO / WHY TEDX */}
+      <section className="about-hero">
+        <div className="max-w-7xl mx-auto text-center px-4">
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <h1 className="about-hero-title">
+              Why <span className="text-[#E62B1E]">TEDx</span>Congaree Vista?
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="about-hero-subtitle">
               A locally organized event bringing together our community to share ideas worth spreading
             </p>
+
+            <div className="about-hero-divider" />
+
+            <div className="about-hero-copy">
+              {whyTedxCopy}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -120,77 +138,13 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl mb-6 text-black dark:text-white">Our Organizing Team</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              Click a team member to read their bio
-            </p>
           </motion.div>
 
           <TeamGridSpeakerStyle teamMembers={teamMembers} />
         </div>
       </section>
 
-      {/* Why TEDxCongaree Vista */}
-      <section className="py-20 px-4">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-4xl md:text-5xl mb-6 text-black dark:text-white">
-              Why <span className="text-[#E62B1E]">TEDxCongaree Vista</span>?
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              A spirit of connection, creativity, and growth — rooted in Columbia, built for changemakers.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="why-tedx-box rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 md:p-10 shadow-sm"
-          >
-            <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
-              <p>
-                TEDxCongaree Vista reflects not just the location of Columbia, but a spirit of connection, creativity, and growth
-                that aligns with the mission of TEDx. Our theme, “ChangeMakers,” showcases local visionaries already making a
-                difference and transforming Columbia through health education, innovative research, tech startups, or grassroots
-                initiatives. We’re spotlighting community-driven ideas that have shown real impact and carry a clear vision for
-                the future.
-              </p>
-              <p>
-                The name reflects both the cultural identity and geographic heart of Columbia, South Carolina. Together, they
-                symbolize a spirit of connection, progress, and innovation.
-              </p>
-              <p>
-                TEDxCongaree Vista will expose attendees to new ways of thinking, unique viewpoints, and an interactive atmosphere
-                filled with rich dialogue and activity. We aim to feature thought leaders from diverse fields and foster meaningful
-                exchanges not only between speakers and the audience, but also among community members themselves.
-              </p>
-              <p>
-                By sharing ideas in this powerful and collaborative format, we will spark local and personal transformation,
-                inspire change across communities, and celebrate how far we’ve come and where we’re going. By supporting us, you
-                become part of a global movement while helping build something deeply local and lasting. You're not just funding a
-                single event, you’re investing in a platform for innovation, inclusion, and impact.
-              </p>
-              <p>
-                Help us bring the most meaningful TEDx experience to life in the heart of Columbia. TEDxCongaree Vista is more than
-                an event. It’s a reflection of who we are, and who we have the potential to become.
-              </p>
-
-              <p className="text-center pt-2">
-                <span className="text-black dark:text-white font-semibold">Let’s create something powerful, together.</span>
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Values */}
+      {/* Our Values */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -273,12 +227,6 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
                 </a>
                 .
               </p>
-
-              {volunteerFormUrl.includes("YOUR-FORM-LINK-HERE") && (
-                <p className="form-update-warning text-sm text-amber-700 dark:text-amber-400">
-                  ⚠️ Update <span className="font-semibold">volunteerFormUrl</span> with your real form link.
-                </p>
-              )}
             </div>
 
             <div className="nonprofit-card rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
@@ -314,8 +262,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
               and connection.
             </p>
             <p>
-              These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but
-              individual TEDx events are self-organized.
+              These local, self-organized events are branded TEDx, where x = independently organized TED event.               The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized.
             </p>
             <p className="text-center pt-6">
               <span className="text-black dark:text-white">

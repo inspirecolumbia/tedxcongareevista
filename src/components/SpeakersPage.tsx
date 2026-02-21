@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import "./AboutPage.css";
 
 import ElisePartin from "../assets/speakers/ElisePartin.jpg"
 import TysonKBrown from "../assets/speakers/TysonKBrown.jpg"
@@ -45,15 +46,15 @@ export function SpeakersPage() {
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-transparent">
+    <div className="min-h-screen bg-transparent">
       {/* Header */}
-      <section className="py-20 px-4 bg-transparent backdrop-blur-0">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="about-hero">
+        <div className="max-w-7xl mx-auto text-center px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <h1 className="text-5xl md:text-6xl mb-6 text-black dark:text-white">
+            <h1 className="about-hero-title">
               Our <span className="text-[#E62B1E]">Speakers</span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="about-hero-subtitle">
               Meet the visionaries, innovators, and changemakers who will share their groundbreaking ideas
             </p>
           </motion.div>

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Heart, Users, MessageSquare, Calendar } from "lucide-react";
+import "./AboutPage.css";
 
 export function SupportPage() {
   const supportWays = [
@@ -39,19 +40,19 @@ export function SupportPage() {
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-transparent">
+    <div className="min-h-screen bg-transparent">
       {/* Header */}
-      <section className="py-20 px-4 bg-transparent backdrop-blur-0">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="about-hero">
+        <div className="max-w-7xl mx-auto text-center px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl mb-6 text-black dark:text-white">
+            <h1 className="about-hero-title">
               <span className="text-[#E62B1E]">Support</span> Our Mission
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="about-hero-subtitle">
               Help us create a platform for ideas worth spreading in our community
             </p>
           </motion.div>

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Mail } from "lucide-react";
+import "./AboutPage.css";
 import theDesignStudio from "../assets/sponsors/theDesignStudio.png";
 import lfted from "../assets/sponsors/lfted.png";
 import betheaFamilyDentistry from "../assets/sponsors/betheaFamilyDentistry.png";
@@ -99,19 +100,19 @@ export function SponsorsPage() {
   const email = "sponsorships@tedxcongareevista.com";
 
   return (
-    <div className="pt-20 min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-transparent">
       {/* Header */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 dark:from-gray-800 to-white dark:to-gray-900">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="about-hero">
+        <div className="max-w-7xl mx-auto text-center px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl mb-6 text-black dark:text-white">
+            <h1 className="about-hero-title">
               Our <span className="text-[#E62B1E]">Sponsors</span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="about-hero-subtitle">
               Thank you to our generous partners who make TEDxCongaree Vista possible
             </p>
           </motion.div>
