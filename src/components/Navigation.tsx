@@ -32,7 +32,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-6 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-7xl mx-auto bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-full shadow-lg border border-gray-100 dark:border-gray-800">
+      className="max-w-7xl mx-auto bg-white/95 backdrop-blur-sm rounded-full shadow-lg border border-gray-100"
         <div className="flex items-center justify-between h-16 px-6 sm:px-8">
           <motion.div
               initial={{ opacity: 0 }}
@@ -65,7 +65,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 transition={{ delay: 0.1 * index }}
                 onClick={() => onNavigate(item.id)}
                 className={`relative px-1 py-2 transition-colors ${
-                  currentPage === item.id ? "text-[#E62B1E]" : "text-gray-700 dark:text-gray-300 hover:text-[#E62B1E]"
+                  currentPage === item.id ? "text-[#E62B1E]" : "text-gray-700 hover:text-[#E62B1E]"
                 }`}
               >
                 {item.label}
@@ -85,7 +85,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           {/* Mobile Menu Button & Theme Toggle */}
           <div className="md:hidden flex items-center gap-2">
             <button
-              className="p-2 text-gray-700 dark:text-gray-300"
+              className="p-2 text-gray-700"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -110,8 +110,8 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 }}
                 className={`block w-full text-center px-4 py-3 rounded-lg ${
                   currentPage === item.id
-                    ? "text-[#E62B1E] bg-red-50 dark:bg-red-950/30"
-                    : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+                    ? "text-[#E62B1E] bg-red-50"
+                    : "text-gray-700 hover:bg-gray-50"
                 }`}
               >
                 {item.label}

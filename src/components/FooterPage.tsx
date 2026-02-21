@@ -29,7 +29,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-white/10 dark:bg-gray-900/30 text-white px-6 pt-10 pb-28 backdrop-blur-sm">
+    <footer className="bg-white/10 text-white px-6 pt-10 pb-28 backdrop-blur-sm">
       <div className="mx-auto w-full max-w-6xl">
         <div className="flex flex-col items-center text-center">
           {/* Logo */}
@@ -41,7 +41,7 @@ export function Footer() {
 
           {/* Disclaimer + Copyright */}
           <div className="mt-4">
-            <p className="text-sm text-black dark:text-gray-300">
+            <p className="text-sm text-black">
               This independent TEDx event is operated under license from{" "}
               <a
                 href="https://www.ted.com/"
@@ -52,7 +52,7 @@ export function Footer() {
               .
             </p>
 
-            <p className="text-sm text-black dark:text-gray-300">
+            <p className="text-sm text-black">
               © 2025{" "}
               <a
                 href="https://changemakersevents.org/"
@@ -83,7 +83,7 @@ export function Footer() {
           <br></br>
 
           {/* Links */}
-          <div className="mt-4 flex items-center justify-center gap-6 text-sm text-black dark:text-gray-300">
+            <div className="mt-4 flex items-center justify-center gap-6 text-sm text-black">
             <a
               href="https://tedxcongareevista.com/#about-ted"
               className="underline underline-offset-4 hover:text-gray-200"
@@ -112,7 +112,7 @@ export function Footer() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white placeholder-black dark:placeholder-black focus:border-[#E62B1E] focus:outline-none"
+              className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 bg-white text-black placeholder-black focus:border-[#E62B1E] focus:outline-none"
             />
             <motion.button
               whileHover={{ scale: 1.05 }}
