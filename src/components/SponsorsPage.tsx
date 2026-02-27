@@ -149,7 +149,7 @@ export function SponsorsPage() {
                       dark:bg-white
                       border border-gray-200
                       rounded-xl
-                      h-[2800px] w-[200px]
+                      h-[200px] w-[200px]
                       flex items-center justify-center
                       shadow-sm hover:shadow-md
                       transition-all
