@@ -130,7 +130,7 @@ export function SponsorsPage() {
               transition={{ delay: 0.2 * tierIndex, duration: 0.6 }}
             >
               <div className="flex items-center justify-center gap-3 mb-8">
-                <h2 className="text-3xl md:text-4xl text-center text-black dark:text-white">{tier.tier}</h2>
+                <h2 className="text-3xl md:text-4xl text-center text-black">{tier.tier}</h2>
               </div>
               {/* Sponsor Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
@@ -146,7 +146,6 @@ export function SponsorsPage() {
                     whileHover={{ y: -8 }}
                     className={`
                       bg-white
-                      dark:bg-white
                       border border-gray-200
                       rounded-xl
                       h-[2800px] w-[200px]
@@ -172,7 +171,7 @@ export function SponsorsPage() {
       </section>
 
       {/* Become a Sponsor */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 dark:from-gray-800 to-gray-100 dark:to-gray-900">
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-gray-100">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -180,10 +179,10 @@ export function SponsorsPage() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl mb-6 text-black dark:text-white">
+          <h2 className="text-4xl md:text-5xl mb-6 text-black">
             Become a <span className="text-[#E62B1E]">Sponsor</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-10">
+          <p className="text-xl text-gray-600 mb-10">
             Partner with us to amplify ideas worth spreading and make a lasting impact in our community
           </p>
           <div className="mt-8 flex flex-col items-center gap-4">
@@ -199,7 +198,7 @@ export function SponsorsPage() {
             </motion.a>
             <a
               href={`mailto:${email}`}
-              className="email-btn inline-flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
+              className="email-btn inline-flex items-center justify-center gap-2 border border-gray-200 text-black hover:bg-gray-50"
             >
               <Mail size={18} /> Email Us
             </a>

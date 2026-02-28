@@ -74,7 +74,7 @@ export function SpeakersPage() {
                 whileHover={{ y: -8 }}
                 className="group cursor-pointer"
               >
-                <div className="relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 aspect-square mb-4">
+                <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-square mb-4">
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.6 }} className="w-full h-full">
                     <ImageWithFallback src={speaker.image} alt={speaker.name} className="w-full h-full object-cover" />
                   </motion.div>
@@ -86,10 +86,10 @@ export function SpeakersPage() {
                     </div>
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                <h3 className="text-lg font-bold text-gray-900">
                   {speaker.name}
                 </h3>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+                <p className="mt-1 text-sm text-gray-600 line-clamp-2">
                   {speaker.bio}
                 </p>
 
