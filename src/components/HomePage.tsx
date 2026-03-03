@@ -198,7 +198,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   </motion.div>
 
                   <h3 className="text-gray-600 mb-2">{stat.label}</h3>
-                  <p className="text-2xl text-black">{stat.value}</p>
+                  <p className="text-2xl text-black break-words">{stat.value}</p>
                 </motion.button>
               ))}
             </div>
