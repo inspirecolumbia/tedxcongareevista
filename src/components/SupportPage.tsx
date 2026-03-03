@@ -71,7 +71,7 @@ export function SupportPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index, duration: 0.6 }}
                 whileHover={{ y: -8 }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors cursor-pointer group"
+                className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors cursor-pointer group"
               >
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -80,8 +80,8 @@ export function SupportPage() {
                 >
                   <way.icon className="text-white" size={28} />
                 </motion.div>
-                <h3 className="text-2xl mb-3 text-black dark:text-white">{way.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">{way.description}</p>
+                <h3 className="text-2xl mb-3 text-black">{way.title}</h3>
+                <p className="text-gray-600 mb-6">{way.description}</p>
                 <button className="text-[#E62B1E] group-hover:underline">
                   {way.action} →
                 </button>
@@ -92,7 +92,7 @@ export function SupportPage() {
       </section>
 
       {/* Volunteer Roles */}
-      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -101,10 +101,10 @@ export function SupportPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl mb-6 text-black dark:text-white">
+            <h2 className="text-4xl md:text-5xl mb-6 text-black">
               Volunteer <span className="text-[#E62B1E]">Roles</span>
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-xl text-gray-600">
               Explore opportunities to contribute your skills and passion
             </p>
           </motion.div>
@@ -118,9 +118,9 @@ export function SupportPage() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.05 * index, duration: 0.4 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-white dark:bg-gray-900 p-6 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-[#E62B1E] transition-colors text-center cursor-pointer"
+                className="bg-white p-6 rounded-xl border-2 border-gray-200 hover:border-[#E62B1E] transition-colors text-center cursor-pointer"
               >
-                <p className="text-lg text-black dark:text-white">{role}</p>
+                <p className="text-lg text-black">{role}</p>
               </motion.div>
             ))}
           </div>
@@ -128,7 +128,7 @@ export function SupportPage() {
       </section>
 
       {/* Impact Section */}
-      <section className="py-20 px-4 bg-white dark:bg-gray-900">
+      <section className="py-20 px-4 bg-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -136,10 +136,10 @@ export function SupportPage() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl mb-6 text-black dark:text-white">
+          <h2 className="text-4xl md:text-5xl mb-6 text-black">
             Your Impact <span className="text-[#E62B1E]">Matters</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed">
+          <p className="text-xl text-gray-600 mb-10 leading-relaxed">
             Every contribution, whether time, resources, or advocacy, helps us create a space where innovative ideas can flourish and inspire positive change in our community. Together, we're building something extraordinary.
           </p>
           <motion.button

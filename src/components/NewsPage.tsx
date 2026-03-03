@@ -47,13 +47,13 @@ export function NewsPage() {
               transition={{ duration: 0.6 }}
               className="news-left"
             >
-              <div className="news-card border border-gray-200 dark:border-gray-700 bg-transparent">
+              <div className="news-card rounded-2xl border border-gray-200 bg-transparent">
                 <div className="news-card-header">
                   <div className="min-w-0">
-                    <p className="news-card-title text-black dark:text-white">
+                    <p className="news-card-title text-black">
                       News Feed
                     </p>
-                    <p className="news-card-subtitle text-gray-600 dark:text-gray-300 truncate">
+                    <p className="news-card-subtitle text-gray-600 truncate">
                       Latest posts from our newsletter site.
                     </p>
                   </div>
@@ -88,14 +88,14 @@ export function NewsPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="news-right"
             >
-              <div className="video-card border border-gray-200 dark:border-gray-700 bg-transparent">
+              <div className="video-card border border-gray-200 bg-transparent">
                 <div className="video-card-header">
                   <div className="min-w-0">
-                    <p className="video-card-title text-black dark:text-white">
+                    <p className="video-card-title text-black">
                       Videos
                     </p>
-                    <p className="video-card-subtitle text-gray-600 dark:text-gray-300">
-                      Watch &amp; share.
+                    <p className="video-card-subtitle text-gray-600">
+                      Watch & share.
                     </p>
                   </div>
                 </div>
@@ -122,10 +122,10 @@ export function NewsPage() {
                       </div>
 
                       <div className="video-meta">
-                        <div className="video-title text-black dark:text-white">
+                        <div className="video-title text-black">
                           {v.title}
                         </div>
-                        <div className="video-action text-gray-700 dark:text-gray-300">
+                        <div className="video-action text-gray-700">
                           Watch on YouTube <ExternalLink size={14} />
                         </div>
                       </div>
@@ -133,7 +133,7 @@ export function NewsPage() {
                   ))}
 
                   {VIDEOS.length === 0 && (
-                    <div className="video-empty text-gray-700 dark:text-gray-300">
+                    <div className="video-empty text-gray-700">
                       No videos yet.
                     </div>
                   )}
