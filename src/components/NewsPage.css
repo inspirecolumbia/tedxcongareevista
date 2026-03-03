@@ -1,23 +1,46 @@
-/* NewsPage.css — styled to match AboutPage "premium aura" cards */
+/* NewsPage.css — mobile-first fixes + premium aura */
 
-/* ✅ Force the 80/20 layout even if some global CSS breaks Tailwind's .grid */
+:root {
+  --nav-pill-h: 96px; /* approx pill height on mobile */
+}
+
+@media (max-width: 640px) {
+  /* Push hero content down so the H1 doesn't hide behind the nav */
+  .news-hero {
+    padding-top: calc(var(--nav-pill-h) + 24px) !important;
+    padding-bottom: 28px !important;
+  }
+
+  /* Make the title fit nicely on small screens */
+  .news-hero .about-hero-title {
+    font-size: clamp(2.1rem, 8vw, 2.8rem);
+    line-height: 1.05;
+    margin-top: 0 !important;
+  }
+
+  .news-hero .about-hero-subtitle {
+    margin-top: 0.9rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    padding-inline: 0.25rem;
+  }
+}
+
 .news-layout {
-  display: grid !important;
-  grid-template-columns: 4fr 1fr; /* 80/20 */
+  display: grid;
+  grid-template-columns: 4fr 1fr; /* 80/20 desktop */
+  gap: 1.5rem;
   align-items: start;
 }
 
-.news-left {
-  min-width: 0; /* prevents overflow pushing sidebar down */
-}
-
+.news-left,
 .news-right {
   min-width: 0;
 }
 
 @media (max-width: 1024px) {
   .news-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* stack */
   }
 }
 
@@ -104,7 +127,7 @@
   border-color: rgba(230, 43, 30, 0.35);
 }
 
-/* Panel heights (match left and right) */
+/* Desktop heights: match left and right */
 .news-iframe-wrap {
   height: 72vh;
   min-height: 520px;
@@ -116,16 +139,7 @@
   min-height: 520px;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .news-iframe-wrap,
-  .video-card {
-    height: auto;
-    min-height: unset;
-  }
-}
-
-/* ✅ Iframe should fill its container (do NOT set 80% here) */
+/* Iframe fills container */
 .news-iframe {
   width: 100%;
   height: 100%;
@@ -133,9 +147,9 @@
   display: block;
 }
 
-/* Right panel list (scrollable) */
+/* Right panel list (scrollable on desktop) */
 .video-list {
-  height: calc(72vh - 74px); /* subtract header height */
+  height: calc(72vh - 74px);
   min-height: 420px;
   overflow-y: auto;
   padding: 1rem;
@@ -143,18 +157,65 @@
   gap: 0.85rem;
 }
 
+/* ---------- MOBILE FIXES (this is the key) ---------- */
+@media (max-width: 640px) {
+  .news-card-header {
+    padding: 0.85rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .news-card-title { font-size: 1rem; }
+  .news-card-subtitle { font-size: 0.85rem; }
+
+  /* Kill desktop mins so the iframe can breathe */
+  .news-card,
+  .video-card {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  /* Give the iframe real visible height on mobile browsers */
+  .news-iframe-wrap {
+    height: calc(100svh - 220px) !important;
+    min-height: 60svh !important;
+  }
+
+  /* Videos should not compete for full height on mobile */
+  .video-list {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 60svh;
+  }
+
+  .news-open-link {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.9rem;
+    border-radius: 0.8rem;
+  }
+
+  .news-card::before,
+  .video-card::before {
+    opacity: 0.75;
+  }
+}
+
+/* Tablet and down: stop forcing equal-height panels */
 @media (max-width: 1024px) {
+  .news-iframe-wrap,
+  .video-card {
+    height: auto;
+    min-height: 0;
+  }
+
   .video-list {
     height: auto;
-    min-height: unset;
+    min-height: 0;
     max-height: 70vh;
   }
 }
 
 /* Nice scrollbar */
-.video-list::-webkit-scrollbar {
-  width: 10px;
-}
+.video-list::-webkit-scrollbar { width: 10px; }
 .video-list::-webkit-scrollbar-thumb {
   background: rgba(148, 163, 184, 0.35);
   border-radius: 999px;
@@ -203,9 +264,7 @@
   transition: opacity 0.18s ease;
 }
 
-.video-item:hover .video-thumb-overlay {
-  opacity: 1;
-}
+.video-item:hover .video-thumb-overlay { opacity: 1; }
 
 .video-play {
   position: absolute;

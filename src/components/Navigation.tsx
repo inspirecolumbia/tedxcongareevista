@@ -118,7 +118,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             ))}
           </motion.div>
         )}
-      </div>
+      </motion.div>
     </motion.nav>
   );
 }

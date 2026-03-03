@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Heart, Users, MessageSquare, Calendar } from "lucide-react";
 import "./AboutPage.css";
+import "./NewsPage.css";
 
 export function SupportPage() {
   const supportWays = [
@@ -42,7 +43,7 @@ export function SupportPage() {
   return (
     <div className="min-h-screen bg-transparent">
       {/* Header */}
-      <section className="about-hero">
+      <section className="about-hero news-hero">
         <div className="max-w-7xl mx-auto text-center px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

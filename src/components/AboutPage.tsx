@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Lightbulb, Target, Users, Heart, ArrowRight, Mail } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import "./AboutPage.css";
+import "./NewsPage.css";
 
 // ✅ Move these images into: src/assets/headshots/team/
 import Shyam from "../assets/headshots/team/shyam.jpg";
@@ -108,7 +109,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
   return (
     <div className="min-h-screen bg-transparent">
       {/* HERO / WHY TEDX */}
-      <section className="about-hero">
+      <section className="about-hero news-hero">
         <div className="max-w-7xl mx-auto text-center px-4">
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="about-hero-title">
