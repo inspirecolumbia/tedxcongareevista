@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import "./AboutPage.css";
+import "./NewsPage.css"
 
 import ElisePartin from "../assets/speakers/ElisePartin.jpg"
 import TysonKBrown from "../assets/speakers/TysonKBrown.jpg"
@@ -48,7 +49,7 @@ export function SpeakersPage() {
   return (
     <div className="min-h-screen bg-transparent">
       {/* Header */}
-      <section className="about-hero">
+      <section className="about-hero news-hero">
         <div className="max-w-7xl mx-auto text-center px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="about-hero-title">

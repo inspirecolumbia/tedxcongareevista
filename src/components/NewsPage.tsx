@@ -5,31 +5,11 @@ import "./AboutPage.css";
 import "./NewsPage.css";
 
 const VIDEOS = [
-  {
-    href: "https://youtu.be/nfvWXBNgobg",
-    id: "nfvWXBNgobg",
-    title: "Meet the Team!",
-  },
-  {
-    href: "https://www.youtube.com/watch?v=dLq_kUdfb9M",
-    id: "dLq_kUdfb9M",
-    title: "Do people in Columbia, SC know about TEDx? | Part 1",
-  },
-  {
-    href: "https://www.youtube.com/watch?v=AwS1o-OA_-s",
-    id: "AwS1o-OA_-s",
-    title: "Live on Wis 10!",
-  },
-  {
-    href: "https://www.youtube.com/watch?v=6Yj4aHgXcKE",
-    id: "6Yj4aHgXcKE",
-    title: "Do people in Columbia, SC know about TEDx? | Part 2",
-  },
-  {
-    href: "https://www.youtube.com/watch?v=PYfPmI1uQdo",
-    id: "PYfPmI1uQdo",
-    title: "Speaker meet & greet!",
-  },
+  { href: "https://youtu.be/nfvWXBNgobg", id: "nfvWXBNgobg", title: "Meet the Team!" },
+  { href: "https://www.youtube.com/watch?v=dLq_kUdfb9M", id: "dLq_kUdfb9M", title: "Do people in Columbia, SC know about TEDx? | Part 1" },
+  { href: "https://www.youtube.com/watch?v=AwS1o-OA_-s", id: "AwS1o-OA_-s", title: "Live on Wis 10!" },
+  { href: "https://www.youtube.com/watch?v=6Yj4aHgXcKE", id: "6Yj4aHgXcKE", title: "Do people in Columbia, SC know about TEDx? | Part 2" },
+  { href: "https://www.youtube.com/watch?v=PYfPmI1uQdo", id: "PYfPmI1uQdo", title: "Speaker meet & greet!" },
 ];
 
 export function NewsPage() {
@@ -38,7 +18,7 @@ export function NewsPage() {
   return (
     <div className="min-h-screen bg-transparent">
       {/* Header (match AboutPage style) */}
-      <section className="about-hero">
+      <section className="about-hero news-hero">
         <div className="max-w-7xl mx-auto text-center px-4">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -58,16 +38,16 @@ export function NewsPage() {
       {/* Body */}
       <section className="pt-20 pb-14 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-6">
-            {/* LEFT: News Feed (80%) */}
+          <div className="news-layout">
+            {/* LEFT: News Feed */}
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex-1"
+              className="news-left"
             >
-              <div className="news-card rounded-2xl border border-gray-200 dark:border-gray-700 bg-transparent">
+              <div className="news-card border border-gray-200 dark:border-gray-700 bg-transparent">
                 <div className="news-card-header">
                   <div className="min-w-0">
                     <p className="news-card-title text-black dark:text-white">
@@ -93,19 +73,20 @@ export function NewsPage() {
                     title="TEDxCongaree Vista News"
                     src={NEWS_URL}
                     className="news-iframe"
+                    loading="lazy"
                     sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
                   />
                 </div>
               </div>
             </motion.div>
 
-            {/* RIGHT: Videos Sidebar (20%) — scrollable */}
+            {/* RIGHT: Videos */}
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="lg:flex-shrink-0 lg:w-1/5"
+              className="news-right"
             >
               <div className="video-card border border-gray-200 dark:border-gray-700 bg-transparent">
                 <div className="video-card-header">
@@ -114,7 +95,7 @@ export function NewsPage() {
                       Videos
                     </p>
                     <p className="video-card-subtitle text-gray-600 dark:text-gray-300">
-                      Watch & share.
+                      Watch &amp; share.
                     </p>
                   </div>
                 </div>
