@@ -1,27 +1,27 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import "./AboutPage.css";
 
 export function AboutTEDPage() {
+  const paragraph1 = `TED is a nonprofit, nonpartisan organization dedicated to discovering, debating and spreading ideas that spark conversation, deepen understanding and drive meaningful change. Our organization is devoted to curiosity, reason, wonder and the pursuit of knowledge — without an agenda. We welcome people from every discipline and culture who seek a deeper understanding of the world and connection with others, and we invite everyone to engage with ideas and activate them in your community.`;
+
   return (
     <div className="min-h-screen bg-transparent">
-      {/* About TEDx Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex-1 space-y-6"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-black">
+      {/* HERO / ABOUT TEDx */}
+      <section className="about-hero news-hero">
+        <div className="max-w-7xl mx-auto text-center px-4">
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <h1 className="about-hero-title">
               About <span className="text-[#E62B1E]">TEDx</span>
-            </h2>
-            <p className="text-xl text-gray-600 font-medium">
+            </h1>
+            <p className="about-hero-subtitle">
               x = independently organized event
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
+
+            <div className="about-hero-divider" />
+
+            <div className="about-hero-copy">
               In the spirit of discovering and spreading ideas, TEDx is a program of local,
               self-organized events that bring people together to share a TED-like experience. At a
               TEDx event, TED Talks video and live speakers combine to spark deep discussion and
@@ -29,28 +29,31 @@ export function AboutTEDPage() {
               independently organized TED event. The TED Conference provides general guidance for the
               TEDx program, but individual TEDx events are self-organized. (Subject to certain rules
               and regulations.)
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-1"
-          >
-            <div className="relative rounded-2xl overflow-hidden aspect-video bg-gray-100 shadow-lg border border-gray-200">
-              <ImageWithFallback
-                src="https://tedxcongareevista.com/assets/images/image08.png?v=d7da8152"
-                alt="TEDx Community Event"
-                className="w-full h-full object-cover"
-              />
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* About TED Section */}
+      {/* Image Section */}
+      <section className="py-12 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative rounded-2xl overflow-hidden aspect-video bg-gray-100 shadow-lg border border-gray-200"
+          >
+            <ImageWithFallback
+              src="https://tedxcongareevista.com/assets/images/image08.png?v=d7da8152"
+              alt="TEDx Community Event"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ABOUT TED */}
       <section className="py-20 px-4 bg-gray-50 border-t border-gray-200">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -65,14 +68,7 @@ export function AboutTEDPage() {
             </h2>
 
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
-              <p>
-                TED is a nonprofit, nonpartisan organization dedicated to discovering, debating and
-                spreading ideas that spark conversation, deepen understanding and drive meaningful
-                change. Our organization is devoted to curiosity, reason, wonder and the pursuit of
-                knowledge — without an agenda. We welcome people from every discipline and culture
-                who seek a deeper understanding of the world and connection with others, and we
-                invite everyone to engage with ideas and activate them in your community.
-              </p>
+              <p>{paragraph1}</p>
 
               <p>
                 TED began in 1984 as a conference where Technology, Entertainment and Design
