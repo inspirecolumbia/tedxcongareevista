@@ -8,16 +8,31 @@ import { SponsorsPage } from "./components/SponsorsPage";
 import { SupportPage } from "./components/SupportPage";
 import { NewsPage } from "./components/NewsPage";
 import { AboutPage } from "./components/AboutPage";
+import { AboutTEDPage } from "./components/AboutTEDPage";
 import { Footer } from "./components/FooterPage";
 
-type Page = "home" | "speakers" | "sponsors" | "support" | "news" | "about";
+type Page = "home" | "speakers" | "sponsors" | "support" | "news" | "about" | "about-ted";
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>("home");
+  const [currentPage, setCurrentPage] = useState<Page>(() => {
+    const path = window.location.pathname.replace("/", "");
+    return (path as Page) || "home";
+  });
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page as Page);
+    window.history.pushState({}, "", `/${page === "home" ? "" : page}`);
   };
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname.replace("/", "");
+      setCurrentPage((path as Page) || "home");
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   const SITE_TITLE = "TEDxCongaree Vista";
 
@@ -29,6 +44,7 @@ export default function App() {
       support: "Support",
       news: "News",
       about: "About",
+      "about-ted": "About TED",
     };
 
     const pageTitle = titles[currentPage];
@@ -49,6 +65,8 @@ export default function App() {
         return <NewsPage />;
       case "about":
         return <AboutPage />;
+      case "about-ted":
+        return <AboutTEDPage />;
       default:
         return <HomePage onNavigate={handleNavigate} />;
     }
