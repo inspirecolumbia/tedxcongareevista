@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import {ImageWithFallback} from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 import longLogoBlack from "../assets/longlogo-black.png";
 
@@ -29,27 +29,29 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-6 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8"
     >
-      <div className={`max-w-7xl mx-auto bg-white/95 backdrop-blur-sm shadow-lg border border-gray-100 transition-all duration-300 ${
-        mobileMenuOpen ? "rounded-3xl" : "rounded-full"
-      }`}>
+      <div
+        className={`max-w-7xl mx-auto bg-white/95 backdrop-blur-sm shadow-lg border border-gray-100 transition-all duration-300 ${
+          mobileMenuOpen ? "rounded-3xl" : "rounded-full"
+        }`}
+      >
         <div className="flex items-center justify-between h-16 px-6 sm:px-8">
           <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="flex-shrink-0 cursor-pointer flex items-center"
-              onClick={() => onNavigate("home")}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="flex-shrink-0 cursor-pointer flex items-center"
+            onClick={() => onNavigate("home")}
           >
             <div className="h-8 sm:h-10 overflow-hidden flex items-center min-w-[120px] sm:min-w-[180px]">
               <ImageWithFallback
-                  src={longLogoBlack}
-                  alt="TEDxCongaree Vista logo"
-                  style={{
-                    height: '3rem',
-                    width: 'auto',
-                    display: 'block',
-                    objectFit: 'contain'
-                  }}
+                src={longLogoBlack}
+                alt="TEDxCongaree Vista logo"
+                style={{
+                  height: "3rem",
+                  width: "auto",
+                  display: "block",
+                  objectFit: "contain",
+                }}
               />
             </div>
           </motion.div>
@@ -64,7 +66,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 transition={{ delay: 0.1 * index }}
                 onClick={() => onNavigate(item.id)}
                 className={`relative px-1 py-2 transition-colors ${
-                  currentPage === item.id ? "text-[#E62B1E]" : "text-gray-700 hover:text-[#E62B1E]"
+                  currentPage === item.id
+                    ? "text-[#E62B1E]"
+                    : "text-gray-700 hover:text-[#E62B1E]"
                 }`}
               >
                 {item.label}
@@ -77,15 +81,14 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 )}
               </motion.button>
             ))}
-            
-            
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
             <button
               className="p-2 text-gray-700"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              onClick={() => setMobileMenuOpen((v) => !v)}
+              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -118,7 +121,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             ))}
           </motion.div>
         )}
-      </motion.div>
+      </div>
     </motion.nav>
   );
 }
