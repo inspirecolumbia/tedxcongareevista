@@ -53,7 +53,7 @@ export function Footer() {
             </p>
 
             <p className="text-sm text-black">
-              © 2025{" "}
+              © 2026{" "}
               <a
                 href="https://changemakersevents.org/"
                 className="!underline underline-offset-4"
