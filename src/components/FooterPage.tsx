@@ -85,24 +85,17 @@ export function Footer() {
           {/* Links */}
           <div className="mt-4 flex items-center justify-center gap-6 text-sm text-black">
             <a
-              href="https://tedxcongareevista.com/#about-ted"
+              href="/about-ted"
               className="underline underline-offset-4 hover:text-gray-200"
             >
               About TED
             </a>
             <span className="text-gray-500">•</span>
             <a
-              href="https://tedxcongareevista.com/#about-us"
+              href="/about"
               className="underline underline-offset-4 hover:text-gray-200"
             >
               About Us
-            </a>
-            <span className="text-gray-500">•</span>
-            <a
-              href="https://tedxcongareevista.com/#contact"
-              className="underline underline-offset-4 hover:text-gray-200"
-            >
-              Contact Us
             </a>
           </div>
           <br></br>
