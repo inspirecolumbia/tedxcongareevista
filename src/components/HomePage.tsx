@@ -105,10 +105,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
             >
               Join us for an unforgettable journey through innovation, creativity, and inspiration
             </p>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-           
-            <p>&nbsp;</p> <p>&nbsp;</p>  
+
+            <div className="mt-8 mb-4">
+              <span
+                className="inline-block px-8 py-3 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white font-medium text-lg sm:text-xl shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
+                style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
+              >
+                Saturday, March 14th, 2026 10 AM - 5 PM
+              </span>
+            </div>
             </div>
 
             {/* Tickets CTA */}
