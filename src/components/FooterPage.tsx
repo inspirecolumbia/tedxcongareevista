@@ -1,9 +1,54 @@
-import { Instagram, Facebook, Linkedin, Youtube, Mail } from "lucide-react";
+import { useState } from "react";
+import { Instagram, Facebook, Linkedin, Youtube, Mail, Loader2, CheckCircle2, XCircle } from "lucide-react";
 import footerLogo from "../assets/longlogo-black.png";
 import footerLogoDard from "../assets/longlogo-white.png";
 import { motion } from "motion/react";
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus("loading");
+    setMessage("");
+
+    try {
+      const apiKey = process.env.CONVERTKIT_API_KEY;
+      const formId = process.env.CONVERTKIT_FORM_ID;
+
+      if (!apiKey || !formId) {
+        throw new Error("Newsletter configuration missing");
+      }
+
+      const response = await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify({
+          api_key: apiKey,
+          email: email,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to subscribe");
+      }
+
+      setStatus("success");
+      setMessage("Thanks for subscribing!");
+      setEmail("");
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
+    }
+  };
+
   const socials = [
     {
       Icon: Instagram,
@@ -108,19 +153,51 @@ export function Footer() {
           <br></br>
 
           {/* Newsletter Signup */}
-          <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 placeholder-black focus:border-[#E62B1E] focus:outline-none"
-            />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-[#E62B1E] text-white rounded-full hover:bg-[#CC2619] transition-colors whitespace-nowrap"
-            >
-              Subscribe
-            </motion.button>
+          <div className="max-w-lg mx-auto w-full">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                required
+                disabled={status === "loading" || status === "success"}
+                className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 placeholder-gray-500 focus:border-[#E62B1E] focus:outline-none text-black disabled:opacity-50 disabled:bg-gray-100"
+              />
+              <motion.button
+                whileHover={status === "loading" || status === "success" ? {} : { scale: 1.05 }}
+                whileTap={status === "loading" || status === "success" ? {} : { scale: 0.95 }}
+                type="submit"
+                disabled={status === "loading" || status === "success"}
+                className="px-8 py-4 bg-[#E62B1E] text-white rounded-full hover:bg-[#CC2619] transition-colors whitespace-nowrap flex items-center justify-center min-w-[140px] disabled:opacity-80 disabled:hover:bg-[#E62B1E]"
+              >
+                {status === "loading" ? (
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                ) : status === "success" ? (
+                  <CheckCircle2 className="w-5 h-5" />
+                ) : (
+                  "Subscribe"
+                )}
+              </motion.button>
+            </form>
+
+            {/* Status Message */}
+            {message && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`mt-4 flex items-center justify-center gap-2 text-sm ${
+                  status === "success" ? "text-green-400" : "text-red-400"
+                }`}
+              >
+                {status === "success" ? (
+                  <CheckCircle2 className="w-4 h-4" />
+                ) : (
+                  <XCircle className="w-4 h-4" />
+                )}
+                {message}
+              </motion.div>
+            )}
           </div>
         </div>
         <br></br>

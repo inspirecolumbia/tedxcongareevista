@@ -5,6 +5,10 @@ import path from 'path';
 export default defineConfig({
   // IMPORTANT for GitHub Pages under /tedxcongareevista/
   base: '/',
+  define: {
+    'process.env.CONVERTKIT_API_KEY': JSON.stringify(process.env.CONVERTKIT_API_KEY),
+    'process.env.CONVERTKIT_FORM_ID': JSON.stringify(process.env.CONVERTKIT_FORM_ID),
+  },
 
   plugins: [react()],
   resolve: {
