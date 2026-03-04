@@ -162,7 +162,7 @@ export function Footer() {
                 placeholder="Enter your email"
                 required
                 disabled={status === "loading" || status === "success"}
-                className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 placeholder-gray-500 focus:border-[#E62B1E] focus:outline-none text-black disabled:opacity-50 disabled:bg-gray-100"
+                className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 bg-white placeholder-gray-500 focus:border-[#E62B1E] focus:outline-none text-black disabled:opacity-50 disabled:bg-gray-100"
               />
               <motion.button
                 whileHover={status === "loading" || status === "success" ? {} : { scale: 1.05 }}
