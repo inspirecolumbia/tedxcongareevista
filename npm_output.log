@@ -8,3 +8,5 @@ Port 3000 is in use, trying another one...
 
   ➜  Local:   http://localhost:3001/
   ➜  Network: use --host to expose
+5:07:34 PM [vite] (client) hmr update /src/components/HomePage.tsx
+5:09:22 PM [vite] (client) hmr update /src/components/HomePage.tsx

@@ -108,8 +108,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
             <div className="mt-8 mb-4">
               <span
-                className="inline-block px-8 py-3 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white font-medium text-lg sm:text-xl shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
-                style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
+                className="inline-block px-8 py-3 rounded-full bg-black/40 border border-white/20 text-white font-bold text-lg sm:text-xl shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
+                style={{
+                  textShadow: "0 2px 4px rgba(0,0,0,0.5)",
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)"
+                }}
               >
                 Saturday, March 14th, 2026 10 AM - 5 PM
               </span>
