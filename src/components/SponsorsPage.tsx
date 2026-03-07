@@ -28,7 +28,7 @@ import colaDaily from "../assets/sponsors/colaDaily.png";
 import colorectalCancer from "../assets/sponsors/colorectalCancer.png";
 import cyberwoven from "../assets/sponsors/cyberwoven.png";
 import dieselLaptops from "../assets/sponsors/dieselLaptops.png";
-import metro from "../assets/sponsors/metro.jpg"; 
+import metroRamji from "../assets/sponsors/metroRamji.png"; 
 import outsourced from "../assets/sponsors/outsourced.jpg";
 import palmettoProactive from "../assets/sponsors/palmettoProactive.png";
 import qcKinetix from "../assets/sponsors/qcKinetix.png";
@@ -77,7 +77,7 @@ export function SponsorsPage() {
       sponsors: [
         { name: "Villa Tronco", logo: villaTronco, href: "https://www.villatronco.com/"},
         { name: "Break Point", logo: breakPoint, href: "https://www.breakpointcola.com/"},
-        { name: "Metro", logo: metro, href: "https://metrorealtyllc.com/"},
+        { name: "Metro Ramji", logo: metroRamji, href: "https://metrorealtyllc.com/"},
         { name: "Palmetto Proactive Healthcare", logo: palmettoProactive, href: "https://palmettoproactive.com/"},
       ],
     },
