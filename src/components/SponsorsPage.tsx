@@ -18,13 +18,21 @@ import breakPoint from "../assets/sponsors/breakPoint.jpg";
 import noreta from "../assets/sponsors/noreta.jpg";
 import boydInnovation from "../assets/sponsors/boydInnovation.jpg";
 import colaOBO from "../assets/sponsors/colaOBO.jpg";
-import asme from "../assets/sponsors/asme.jpg";
+import asmeStudentSection from "../assets/sponsors/asmeStudentSection.png";
 import cityOfColumbia from "../assets/sponsors/cityOfColumbia.png";
 import cayce from "../assets/sponsors/cayce.png";
 import columbiaConnectors from "../assets/sponsors/columbiaConnectors.png";
 import cor from "../assets/sponsors/cor.png";
 import columbiaChamber from "../assets/sponsors/columbiaChamber.png";
 import colaDaily from "../assets/sponsors/colaDaily.png";
+import colorectalCancer from "../assets/sponsors/colorectalCancer.png";
+import cyberwoven from "../assets/sponsors/cyberwoven.png";
+import dieselLaptops from "../assets/sponsors/dieselLaptops.png";
+import metro from "../assets/sponsors/metro.jpg"; 
+import outsourced from "../assets/sponsors/outsourced.jpg";
+import palmettoProactive from "../assets/sponsors/palmettoProactive.png";
+import qcKinetix from "../assets/sponsors/qcKinetix.png";
+import venture from "../assets/sponsors/venture.jpg";
 
 
 
@@ -44,7 +52,12 @@ export function SponsorsPage() {
         { name: "Dominion Energy", logo: dominionEnergy, href: "https://www.dominionenergy.com/south-carolina"},
         { name: "Carolinas AAPI Business Alliance", logo: caba, href: "https://www.cabausa.org/"},
         { name: "Grace", logo: grace, href: "https://graceoutdoor.com/"},
-
+      ],
+    },
+    { 
+      tier: "Gold Sponsors",
+      sponsors: [
+        { name: "Venture X", logo: venture, href: "https://venturex.com/locations/usa/sc/downtown-columbia-sc/"},
       ],
     },
     {
@@ -54,6 +67,9 @@ export function SponsorsPage() {
         { name: "Snaply Sites", logo: snaplySites, href: "https://snaplysites.com/"},
         { name: "D. Nichole Davis", logo: dnd, href: "https://www.dnicholedavis.com/"},
         { name: "Carolina Screen Printers", logo: carolinaScreenPrinters, href: "https://www.carolinascreenprinters.com/"},
+        { name: "Cyberwoven", logo: cyberwoven, href: "https://www.cyberwoven.com/"},
+        { name: "Colorectal Cancer Prevention Network", logo: colorectalCancer, href: "https://www.crcfacts.com/"},
+        { name: "QC Kinetix", logo: qcKinetix, href: " https://qckinetix.com/"},
       ],
     },
     {
@@ -61,12 +77,16 @@ export function SponsorsPage() {
       sponsors: [
         { name: "Villa Tronco", logo: villaTronco, href: "https://www.villatronco.com/"},
         { name: "Break Point", logo: breakPoint, href: "https://www.breakpointcola.com/"},
+        { name: "Metro", logo: metro, href: "https://metrorealtyllc.com/"},
+        { name: "Palmetto Proactive Healthcare", logo: palmettoProactive, href: "https://palmettoproactive.com/"},
       ],
     },
     {
       tier: "Production Sponsors",
       sponsors: [
+        { name: "Outsourced", logo: outsourced, href: "https://www.outsourcedscale.com/"},
         { name: "Noreta", logo: noreta, href: "https://www.noreta.com/"},
+        { name: "Diesel Laptops", logo: dieselLaptops, href: "https://www.diesellaptops.com/"},
       ],
     },
     {
@@ -76,7 +96,7 @@ export function SponsorsPage() {
         { name: "Columbia OBO", logo: colaOBO, href: "https://www.obo.columbiasc.gov/"},
         {
           name: "ASME Columbia Section",
-          logo: asme,
+          logo: asmeStudentSection,
           href: "https://www.asme.org/communities/sections/columbia-sc",
         }
       ],
