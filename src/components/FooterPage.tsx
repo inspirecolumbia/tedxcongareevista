@@ -2,6 +2,7 @@ import { Instagram, Facebook, Linkedin, Youtube, Mail } from "lucide-react";
 import footerLogo from "../assets/longlogo-black.png";
 import footerLogoDard from "../assets/longlogo-white.png";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   const socials = [
@@ -84,26 +85,26 @@ export function Footer() {
 
           {/* Links */}
           <div className="mt-4 flex items-center justify-center gap-6 text-sm text-black">
-            <a
-              href="https://tedxcongareevista.com/#about-ted"
+            <Link
+              to="/about"
               className="underline underline-offset-4 hover:text-gray-200"
             >
               About TED
-            </a>
+            </Link>
             <span className="text-gray-500">•</span>
-            <a
-              href="https://tedxcongareevista.com/#about-us"
+            <Link
+              to="/about"
               className="underline underline-offset-4 hover:text-gray-200"
             >
               About Us
-            </a>
+            </Link>
             <span className="text-gray-500">•</span>
-            <a
-              href="https://tedxcongareevista.com/#contact"
+            <Link
+              to="/support"
               className="underline underline-offset-4 hover:text-gray-200"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
           <br></br>
 
