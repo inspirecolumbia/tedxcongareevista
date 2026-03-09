@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Calendar, MapPin, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import heroImg from "../assets/2017ColumbiaSkylineTEDx.jpg";
 
@@ -8,6 +9,7 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
+  const navigate = useNavigate();
   const stats = [
     { icon: Calendar, label: "Date", value: "March 14, 2026", type: "text" as const },
     {
@@ -24,8 +26,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const handleStatClick = (stat: (typeof stats)[0]) => {
     if (stat.type === "link" && stat.link) {
       window.open(stat.link, "_blank");
-    } else if (stat.type === "button" && stat.label === "Speakers" && onNavigate) {
-      onNavigate("speakers");
+    } else if (stat.type === "button" && stat.label === "Speakers") {
+      navigate("/speakers");
     }
   };
 
