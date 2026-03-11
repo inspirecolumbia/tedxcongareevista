@@ -1,2 +1,5 @@
 node_modules
 .idea/
+dist/
+npm_output.log
+dev_server.log
