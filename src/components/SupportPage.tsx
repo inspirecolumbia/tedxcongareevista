@@ -10,28 +10,28 @@ export function SupportPage() {
       title: "Volunteer",
       description: "Join our team of passionate volunteers and help create an unforgettable experience",
       action: "Sign Up to Volunteer",
-      href: "https://example.com",
+      href: "https://docs.google.com/forms/d/e/1FAIpQLScFrVyPWl-e2bKzhG4zqqTGjCIn4XrtUKUvkGjOpkvb5qpxUg/viewform",
     },
     {
       icon: Heart,
       title: "Donate",
-      description: "Your generous donation helps us continue spreading ideas that matter",
+      description: "Your generous donation to ChangeMakers Events helps us continue spreading ideas that matter",
       action: "Make a Donation",
-      href: "https://example.com",
+      href: "https://www.zeffy.com/en-US/donation-form/support-educational-events-in-columbia-sc",
     },
     {
       icon: MessageSquare,
       title: "Spread the Word",
       description: "Share TEDxCongaree Vista with your network and help us reach more people",
       action: "Share Event",
-      href: "https://example.com",
+      href: "https://www.instagram.com/tedxcongareevista",
     },
     {
       icon: Calendar,
       title: "Attend",
       description: "Be part of the live audience and experience the power of ideas firsthand",
       action: "Get Tickets",
-      href: "https://example.com",
+      href: "https://tickets.coladaily.com/events/tedxcongaree-vista-3-14-2026",
     },
   ];
 
