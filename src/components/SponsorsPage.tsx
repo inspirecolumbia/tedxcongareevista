@@ -27,15 +27,13 @@ import dnd from "../assets/sponsors/dnd.png";
 import dominionEnergy from "../assets/sponsors/dominionEnergy.jpg";
 import grace from "../assets/sponsors/grace.png";
 import lfted from "../assets/sponsors/lfted.png";
-import ramji from "../assets/sponsors/ramji.png"
-import noreta from "../assets/sponsors/noreta.jpg";
+import ramji from "../assets/sponsors/ramji.png";
 import outsourced from "../assets/sponsors/outsourced.jpg";
 import palmettoProactive from "../assets/sponsors/palmettoProactive.png";
 import qcKinetix from "../assets/sponsors/qcKinetix.png";
 import scHumanities from "../assets/sponsors/scHumanities.jpg";
 import scTamilSangam from "../assets/sponsors/scTamilSangam.jpg";
 import snaplySites from "../assets/sponsors/snaplySites.png";
-import soco from "../assets/sponsors/soco.png";
 import synergymill from "../assets/sponsors/synergyMill.jpg";
 import sweetwaters from "../assets/sponsors/sweetwaters.jpg";
 import theDesignStudio from "../assets/sponsors/theDesignStudio.png";
@@ -91,7 +89,6 @@ export function SponsorsPage() {
         { name: "Palmetto Proactive Healthcare", logo: palmettoProactive, href: "https://palmettoproactive.com/"},
         { name: "Metro Ramji", logo: ramji, href: "https://metrorealtyllc.com/"},
         { name: "Sweetwaters Coffee & Tea", logo: sweetwaters, href: "https://www.sweetwaterscafe.com/sc-columbia-park-st/"},
-        { name: "SOCO", logo: soco, href: "https://www.soco-work.com/"},
       ],
     },
     {
