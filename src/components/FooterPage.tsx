@@ -86,7 +86,7 @@ export function Footer() {
           {/* Links */}
           <div className="mt-4 flex items-center justify-center gap-6 text-sm text-black">
             <Link
-              to="/about"
+              to="/about-ted"
               className="underline underline-offset-4 hover:text-gray-200"
             >
               About TED
