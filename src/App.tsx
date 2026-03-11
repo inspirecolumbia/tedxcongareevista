@@ -9,7 +9,10 @@ import { SponsorsPage } from "./components/SponsorsPage";
 import { SupportPage } from "./components/SupportPage";
 import { NewsPage } from "./components/NewsPage";
 import { AboutPage } from "./components/AboutPage";
+import { AboutTEDPage } from "./components/AboutTEDPage";
 import { Footer } from "./components/FooterPage";
+
+type Page = "home" | "speakers" | "sponsors" | "support" | "news" | "about" | "about-ted";
 
 export default function App() {
   const location = useLocation();
@@ -45,6 +48,7 @@ export default function App() {
       support: "Support",
       news: "News",
       about: "About",
+      "about-ted": "About TED",
     };
 
     const pageTitle = titles[currentPage] || "";
@@ -84,6 +88,7 @@ export default function App() {
                 <Route path="/support" element={<SupportPage />} />
                 <Route path="/news" element={<NewsPage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/about-ted" element={<AboutTEDPage />} />
                 <Route path="*" element={<HomePage onNavigate={handleNavigate} />} />
               </Routes>
             </motion.div>
