@@ -1,13 +1,8 @@
 import { Instagram, Facebook, Linkedin, Youtube, Mail } from "lucide-react";
 import footerLogo from "../assets/longlogo-black.png";
-import footerLogoDard from "../assets/longlogo-white.png";
-import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
-interface FooterProps {
-  onNavigate?: (page: string) => void;
-}
-
-export function Footer({ onNavigate }: FooterProps) {
+export function Footer() {
   const socials = [
     {
       Icon: Instagram,
@@ -88,45 +83,26 @@ export function Footer({ onNavigate }: FooterProps) {
 
           {/* Links */}
           <div className="mt-4 flex items-center justify-center gap-6 text-sm text-black">
-            <button
-              type="button"
-              onClick={() => onNavigate && onNavigate("about-ted")}
-              className="underline underline-offset-4 hover:text-gray-600 transition-colors"
+            <Link
+              to="/about"
+              className="underline underline-offset-4 hover:text-gray-200"
             >
               About TED
-            </button>
+            </Link>
             <span className="text-gray-500">•</span>
-            <button
-              type="button"
-              onClick={() => onNavigate && onNavigate("about")}
-              className="underline underline-offset-4 hover:text-gray-600 transition-colors"
+            <Link
+              to="/about"
+              className="underline underline-offset-4 hover:text-gray-200"
             >
               About Us
-            </button>
+            </Link>
             <span className="text-gray-500">•</span>
-            <a
-              href="mailto:info@tedxcongareevista.org"
-              className="underline underline-offset-4 hover:text-gray-600 transition-colors"
+            <Link
+              to="/support"
+              className="underline underline-offset-4 hover:text-gray-200"
             >
               Contact Us
-            </a>
-          </div>
-          <br></br>
-
-          {/* Newsletter Signup */}
-          <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 placeholder-black focus:border-[#E62B1E] focus:outline-none"
-            />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-[#E62B1E] text-white rounded-full hover:bg-[#CC2619] transition-colors whitespace-nowrap"
-            >
-              Subscribe
-            </motion.button>
+            </Link>
           </div>
         </div>
         <br></br>
