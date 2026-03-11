@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Calendar, MapPin, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import heroImg from "../assets/2017ColumbiaSkylineTEDx.jpg";
 
@@ -8,6 +9,7 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
+  const navigate = useNavigate();
   const stats = [
     { icon: Calendar, label: "Date", value: "March 14, 2026", type: "text" as const },
     {
@@ -24,8 +26,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const handleStatClick = (stat: (typeof stats)[0]) => {
     if (stat.type === "link" && stat.link) {
       window.open(stat.link, "_blank");
-    } else if (stat.type === "button" && stat.label === "Speakers" && onNavigate) {
-      onNavigate("speakers");
+    } else if (stat.type === "button" && stat.label === "Speakers") {
+      navigate("/speakers");
     }
   };
 
@@ -201,6 +203,58 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   <p className="text-2xl text-black break-words">{stat.value}</p>
                 </motion.button>
               ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* WHAT IS TEDX INFO CARD */}
+      <section className="py-16 sm:py-20 px-4 bg-transparent">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className={[
+              "rounded-3xl",
+              "shadow-[0_18px_55px_rgba(0,0,0,0.16)]",
+              "p-8 sm:p-10 md:p-12",
+              "bg-white"
+            ].join(" ")}
+          >
+            <h2 className="text-4xl md:text-5xl mb-6 text-black text-center">
+              What is <span className="font-black text-[#E62B1E]">TEDx</span>?
+            </h2>
+            <div className="text-lg text-gray-700 leading-relaxed mb-8 max-w-4xl mx-auto space-y-4">
+              <p>
+                In the spirit of discovering and spreading ideas, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience.
+              </p>
+              <p>
+                Our event is called TEDxCongaree Vista, where x = independently organized TED event. At our TEDxCongaree Vista event, TED Talks video and live speakers will combine to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.
+              </p>
+            </div>
+            <div className="flex justify-center mt-8">
+              <motion.a
+                href="https://www.ted.com/about/programs-initiatives/tedx-program"
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="
+                  inline-flex items-center justify-center
+                  px-8 py-3
+                  rounded-full
+                  text-base font-semibold
+                  text-white
+                  bg-[#E62B1E]
+                  shadow-md
+                  hover:bg-[#c22419]
+                  transition-all duration-300
+                "
+              >
+                Learn more about the TEDx program
+              </motion.a>
             </div>
           </motion.div>
         </div>

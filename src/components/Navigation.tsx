@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 import longLogoBlack from "../assets/longlogo-black.png";
@@ -11,6 +12,11 @@ interface NavigationProps {
 }
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Deduce the current page name from the URL pathname to style active link
+  const currentPathPage = location.pathname.split("/")[1] || "home";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -40,7 +46,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
             className="flex-shrink-0 cursor-pointer flex items-center"
-            onClick={() => onNavigate("home")}
+            onClick={() => navigate("/")}
           >
             <div className="h-8 sm:h-10 overflow-hidden flex items-center min-w-[120px] sm:min-w-[180px]">
               <ImageWithFallback
@@ -64,15 +70,15 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                onClick={() => onNavigate(item.id)}
+                onClick={() => navigate(item.id === "home" ? "/" : `/${item.id}`)}
                 className={`relative px-1 py-2 transition-colors ${
-                  currentPage === item.id
+                  currentPathPage === item.id
                     ? "text-[#E62B1E]"
                     : "text-gray-700 hover:text-[#E62B1E]"
                 }`}
               >
                 {item.label}
-                {currentPage === item.id && (
+                {currentPathPage === item.id && (
                   <motion.div
                     layoutId="activeTab"
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E62B1E]"
@@ -107,11 +113,11 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               <button
                 key={item.id}
                 onClick={() => {
-                  onNavigate(item.id);
+                  navigate(item.id === "home" ? "/" : `/${item.id}`);
                   setMobileMenuOpen(false);
                 }}
                 className={`block w-full text-center px-4 py-3 rounded-lg ${
-                  currentPage === item.id
+                  currentPathPage === item.id
                     ? "text-[#E62B1E] bg-red-50"
                     : "text-gray-700 hover:bg-gray-50"
                 }`}

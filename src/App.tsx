@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { Navigation } from "./components/Navigation";
 import { HomePage } from "./components/HomePage";
@@ -14,30 +15,33 @@ import { Footer } from "./components/FooterPage";
 type Page = "home" | "speakers" | "sponsors" | "support" | "news" | "about" | "about-ted";
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>(() => {
-    const path = window.location.pathname.replace("/", "");
-    return (path as Page) || "home";
-  });
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const handleNavigate = (page: string) => {
-    setCurrentPage(page as Page);
-    window.history.pushState({}, "", `/${page === "home" ? "" : page}`);
-  };
-
+  // Backward compatibility redirects for hashes
   useEffect(() => {
-    const handlePopState = () => {
-      const path = window.location.pathname.replace("/", "");
-      setCurrentPage((path as Page) || "home");
-    };
+    if (location.hash) {
+      const hashMap: Record<string, string> = {
+        "#speakers": "/speakers",
+        "#sponsorships": "/sponsors",
+        "#support": "/support",
+        "#about-us": "/about",
+      };
 
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
-  }, []);
+      const redirectPath = hashMap[location.hash];
+      if (redirectPath) {
+        navigate(redirectPath, { replace: true });
+      }
+    }
+  }, [location.hash, navigate]);
 
   const SITE_TITLE = "TEDxCongaree Vista";
 
+  // Infer a readable "currentPage" from the path so Navigation and title still work
+  const currentPage = location.pathname.split("/")[1] || "home";
+
   useEffect(() => {
-    const titles: Record<Page, string> = {
+    const titles: Record<string, string> = {
       home: "",
       speakers: "Speakers",
       sponsors: "Sponsors",
@@ -47,28 +51,16 @@ export default function App() {
       "about-ted": "About TED",
     };
 
-    const pageTitle = titles[currentPage];
+    const pageTitle = titles[currentPage] || "";
     document.title = pageTitle ? `${pageTitle} | ${SITE_TITLE}` : SITE_TITLE;
   }, [currentPage]);
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case "home":
-        return <HomePage onNavigate={handleNavigate} />;
-      case "speakers":
-        return <SpeakersPage />;
-      case "sponsors":
-        return <SponsorsPage />;
-      case "support":
-        return <SupportPage />;
-      case "news":
-        return <NewsPage />;
-      case "about":
-        return <AboutPage />;
-      case "about-ted":
-        return <AboutTEDPage />;
-      default:
-        return <HomePage onNavigate={handleNavigate} />;
+  // Pass navigation behavior temporarily to components expecting onNavigate prop
+  const handleNavigate = (page: string) => {
+    if (page === "home") {
+      navigate("/");
+    } else {
+      navigate(`/${page}`);
     }
   };
 
@@ -83,13 +75,21 @@ export default function App() {
         <main className="flex-1">
           <AnimatePresence mode="wait">
             <motion.div
-              key={currentPage}
+              key={location.pathname}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
             >
-              {renderPage()}
+              <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<HomePage onNavigate={handleNavigate} />} />
+                <Route path="/speakers" element={<SpeakersPage />} />
+                <Route path="/sponsors" element={<SponsorsPage />} />
+                <Route path="/support" element={<SupportPage />} />
+                <Route path="/news" element={<NewsPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="*" element={<HomePage onNavigate={handleNavigate} />} />
+              </Routes>
             </motion.div>
           </AnimatePresence>
         </main>
