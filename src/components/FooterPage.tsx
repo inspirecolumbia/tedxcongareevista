@@ -1,8 +1,13 @@
 import { Instagram, Facebook, Linkedin, Youtube, Mail } from "lucide-react";
 import footerLogo from "../assets/longlogo-black.png";
-import { Link } from "react-router-dom";
+import footerLogoDard from "../assets/longlogo-white.png";
+import { motion } from "motion/react";
 
-export function Footer() {
+interface FooterProps {
+  onNavigate?: (page: string) => void;
+}
+
+export function Footer({ onNavigate }: FooterProps) {
   const socials = [
     {
       Icon: Instagram,
@@ -83,26 +88,45 @@ export function Footer() {
 
           {/* Links */}
           <div className="mt-4 flex items-center justify-center gap-6 text-sm text-black">
-            <Link
-              to="/about"
-              className="underline underline-offset-4 hover:text-gray-200"
+            <button
+              type="button"
+              onClick={() => onNavigate && onNavigate("about-ted")}
+              className="underline underline-offset-4 hover:text-gray-600 transition-colors"
             >
               About TED
-            </Link>
+            </button>
             <span className="text-gray-500">•</span>
-            <Link
-              to="/about"
-              className="underline underline-offset-4 hover:text-gray-200"
+            <button
+              type="button"
+              onClick={() => onNavigate && onNavigate("about")}
+              className="underline underline-offset-4 hover:text-gray-600 transition-colors"
             >
               About Us
-            </Link>
+            </button>
             <span className="text-gray-500">•</span>
-            <Link
-              to="/support"
-              className="underline underline-offset-4 hover:text-gray-200"
+            <a
+              href="mailto:info@tedxcongareevista.org"
+              className="underline underline-offset-4 hover:text-gray-600 transition-colors"
             >
               Contact Us
-            </Link>
+            </a>
+          </div>
+          <br></br>
+
+          {/* Newsletter Signup */}
+          <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 placeholder-black focus:border-[#E62B1E] focus:outline-none"
+            />
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-[#E62B1E] text-white rounded-full hover:bg-[#CC2619] transition-colors whitespace-nowrap"
+            >
+              Subscribe
+            </motion.button>
           </div>
         </div>
         <br></br>
