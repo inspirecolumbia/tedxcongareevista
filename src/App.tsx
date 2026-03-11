@@ -1,6 +1,5 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { Navigation } from "./components/Navigation";
 import { HomePage } from "./components/HomePage";
@@ -15,33 +14,36 @@ import { Footer } from "./components/FooterPage";
 type Page = "home" | "speakers" | "sponsors" | "support" | "news" | "about" | "about-ted";
 
 export default function App() {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState<Page>(() => {
+    const path = window.location.pathname.replace("/", "");
+    return (path as Page) || "home";
+  });
 
-  // Backward compatibility redirects for hashes
+  const handleNavigate = (page: string) => {
+    setCurrentPage(page as Page);
+    window.history.pushState({}, "", `/${page === "home" ? "" : page}`);
+    // Dispatch a custom event so other components (like Footer) can trigger nav changes properly
+    window.dispatchEvent(new Event('pushstate'));
+  };
+
   useEffect(() => {
-    if (location.hash) {
-      const hashMap: Record<string, string> = {
-        "#speakers": "/speakers",
-        "#sponsorships": "/sponsors",
-        "#support": "/support",
-        "#about-us": "/about",
-      };
+    const handlePopState = () => {
+      const path = window.location.pathname.replace("/", "");
+      setCurrentPage((path as Page) || "home");
+    };
 
-      const redirectPath = hashMap[location.hash];
-      if (redirectPath) {
-        navigate(redirectPath, { replace: true });
-      }
-    }
-  }, [location.hash, navigate]);
+    window.addEventListener("popstate", handlePopState);
+    window.addEventListener("pushstate", handlePopState);
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+      window.removeEventListener("pushstate", handlePopState);
+    };
+  }, []);
 
   const SITE_TITLE = "TEDxCongaree Vista";
 
-  // Infer a readable "currentPage" from the path so Navigation and title still work
-  const currentPage = location.pathname.split("/")[1] || "home";
-
   useEffect(() => {
-    const titles: Record<string, string> = {
+    const titles: Record<Page, string> = {
       home: "",
       speakers: "Speakers",
       sponsors: "Sponsors",
@@ -51,16 +53,28 @@ export default function App() {
       "about-ted": "About TED",
     };
 
-    const pageTitle = titles[currentPage] || "";
+    const pageTitle = titles[currentPage];
     document.title = pageTitle ? `${pageTitle} | ${SITE_TITLE}` : SITE_TITLE;
   }, [currentPage]);
 
-  // Pass navigation behavior temporarily to components expecting onNavigate prop
-  const handleNavigate = (page: string) => {
-    if (page === "home") {
-      navigate("/");
-    } else {
-      navigate(`/${page}`);
+  const renderPage = () => {
+    switch (currentPage) {
+      case "home":
+        return <HomePage onNavigate={handleNavigate} />;
+      case "speakers":
+        return <SpeakersPage />;
+      case "sponsors":
+        return <SponsorsPage />;
+      case "support":
+        return <SupportPage />;
+      case "news":
+        return <NewsPage />;
+      case "about":
+        return <AboutPage />;
+      case "about-ted":
+        return <AboutTEDPage />;
+      default:
+        return <HomePage onNavigate={handleNavigate} />;
     }
   };
 
@@ -75,28 +89,19 @@ export default function App() {
         <main className="flex-1">
           <AnimatePresence mode="wait">
             <motion.div
-              key={location.pathname}
+              key={currentPage}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
             >
-              <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<HomePage onNavigate={handleNavigate} />} />
-                <Route path="/speakers" element={<SpeakersPage />} />
-                <Route path="/sponsors" element={<SponsorsPage />} />
-                <Route path="/support" element={<SupportPage />} />
-                <Route path="/news" element={<NewsPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/about-ted" element={<AboutTEDPage />} />
-                <Route path="*" element={<HomePage onNavigate={handleNavigate} />} />
-              </Routes>
+              {renderPage()}
             </motion.div>
           </AnimatePresence>
         </main>
 
         {/* Footer must live outside AnimatePresence to prevent clipping */}
-        <Footer />
+        <Footer onNavigate={handleNavigate} />
       </div>
     </ThemeProvider>
   );

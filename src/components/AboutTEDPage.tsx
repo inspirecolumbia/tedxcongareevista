@@ -34,6 +34,24 @@ export function AboutTEDPage() {
         </div>
       </section>
 
+      {/* Image Section */}
+      <section className="py-12 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative rounded-2xl overflow-hidden aspect-video bg-gray-100 shadow-lg border border-gray-200"
+          >
+            <ImageWithFallback
+              src="https://tedxcongareevista.com/assets/images/image08.png?v=d7da8152"
+              alt="TEDx Community Event"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        </div>
+      </section>
 
       {/* ABOUT TED */}
       <section className="py-20 px-4 bg-gray-50 border-t border-gray-200">

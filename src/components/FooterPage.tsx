@@ -2,9 +2,12 @@ import { Instagram, Facebook, Linkedin, Youtube, Mail } from "lucide-react";
 import footerLogo from "../assets/longlogo-black.png";
 import footerLogoDard from "../assets/longlogo-white.png";
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
 
-export function Footer() {
+interface FooterProps {
+  onNavigate?: (page: string) => void;
+}
+
+export function Footer({ onNavigate }: FooterProps) {
   const socials = [
     {
       Icon: Instagram,
@@ -85,26 +88,28 @@ export function Footer() {
 
           {/* Links */}
           <div className="mt-4 flex items-center justify-center gap-6 text-sm text-black">
-            <Link
-              to="/about-ted"
-              className="underline underline-offset-4 hover:text-gray-200"
+            <button
+              type="button"
+              onClick={() => onNavigate && onNavigate("about-ted")}
+              className="underline underline-offset-4 hover:text-gray-600 transition-colors"
             >
               About TED
-            </Link>
+            </button>
             <span className="text-gray-500">•</span>
-            <Link
-              to="/about"
-              className="underline underline-offset-4 hover:text-gray-200"
+            <button
+              type="button"
+              onClick={() => onNavigate && onNavigate("about")}
+              className="underline underline-offset-4 hover:text-gray-600 transition-colors"
             >
               About Us
-            </Link>
+            </button>
             <span className="text-gray-500">•</span>
-            <Link
-              to="/support"
-              className="underline underline-offset-4 hover:text-gray-200"
+            <a
+              href="mailto:info@tedxcongareevista.org"
+              className="underline underline-offset-4 hover:text-gray-600 transition-colors"
             >
               Contact Us
-            </Link>
+            </a>
           </div>
           <br></br>
 
