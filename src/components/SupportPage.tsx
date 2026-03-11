@@ -127,30 +127,7 @@ export function SupportPage() {
         </div>
       </section>
 
-      {/* Impact Section */}
-      <section className="py-20 px-4 bg-white">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <h2 className="text-4xl md:text-5xl mb-6 text-black">
-            Your Impact <span className="text-[#E62B1E]">Matters</span>
-          </h2>
-          <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-            Every contribution, whether time, resources, or advocacy, helps us create a space where innovative ideas can flourish and inspire positive change in our community. Together, we're building something extraordinary.
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 bg-[#E62B1E] text-white rounded-full hover:bg-[#CC2619] transition-colors"
-          >
-            Get Involved Today
-          </motion.button>
-        </motion.div>
-      </section>
+      
     </div>
   );
 }
