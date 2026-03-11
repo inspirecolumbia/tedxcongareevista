@@ -59,7 +59,6 @@ export function SponsorsPage() {
         { name: "Bethea Family Dentistry", logo: betheaFamilyDentistry, href: "https://betheafamilydentistry.com/" },
         { name: "Dominion Energy", logo: dominionEnergy, href: "https://www.dominionenergy.com/south-carolina"},
         { name: "Carolinas AAPI Business Alliance", logo: caba, href: "https://www.cabausa.org/"},
-        
       ],
     },
     { 
