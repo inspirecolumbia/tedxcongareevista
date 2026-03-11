@@ -1,7 +1,5 @@
 import { Instagram, Facebook, Linkedin, Youtube, Mail } from "lucide-react";
 import footerLogo from "../assets/longlogo-black.png";
-import footerLogoDard from "../assets/longlogo-white.png";
-import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 
 export function Footer() {
@@ -105,23 +103,6 @@ export function Footer() {
             >
               Contact Us
             </Link>
-          </div>
-          <br></br>
-
-          {/* Newsletter Signup */}
-          <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 placeholder-black focus:border-[#E62B1E] focus:outline-none"
-            />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-[#E62B1E] text-white rounded-full hover:bg-[#CC2619] transition-colors whitespace-nowrap"
-            >
-              Subscribe
-            </motion.button>
           </div>
         </div>
         <br></br>
