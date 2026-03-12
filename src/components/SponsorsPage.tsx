@@ -3,36 +3,42 @@ import { Mail } from "lucide-react";
 import "./AboutPage.css";
 import "./NewsPage.css";
 
-import theDesignStudio from "../assets/sponsors/theDesignStudio.png";
-import lfted from "../assets/sponsors/lfted.png";
-import betheaFamilyDentistry from "../assets/sponsors/betheaFamilyDentistry.png";
-import dominionEnergy from "../assets/sponsors/dominionEnergy.jpg";
-import caba from "../assets/sponsors/caba.jpg";
-import grace from "../assets/sponsors/grace.png";
-import beyondThe from "../assets/sponsors/beyondThe.png";
-import snaplySites from "../assets/sponsors/snaplySites.png";
-import dnd from "../assets/sponsors/dnd.png";
-import carolinaScreenPrinters from "../assets/sponsors/carolinaScreenPrinters.png";
-import villaTronco from "../assets/sponsors/villaTronco.png";
-import breakPoint from "../assets/sponsors/breakPoint.jpg";
-import noreta from "../assets/sponsors/noreta.jpg";
-import boydInnovation from "../assets/sponsors/boydInnovation.jpg";
-import colaOBO from "../assets/sponsors/colaOBO.jpg";
+import ambientMedia from "../assets/sponsors/ambientMedia.jpg";
 import asmeStudentSection from "../assets/sponsors/asmeStudentSection.png";
-import cityOfColumbia from "../assets/sponsors/cityOfColumbia.png";
+import betheaFamilyDentistry from "../assets/sponsors/betheaFamilyDentistry.png";
+import beyondThe from "../assets/sponsors/beyondThe.png";
+import boydInnovation from "../assets/sponsors/boydInnovation.jpg";
+import breakPoint from "../assets/sponsors/breakPoint.jpg";
+import caba from "../assets/sponsors/caba.jpg";
+import careerCenter from "../assets/sponsors/careerCenter.png";
+import carolinaScreenPrinters from "../assets/sponsors/carolinaScreenPrinters.png";
 import cayce from "../assets/sponsors/cayce.png";
-import columbiaConnectors from "../assets/sponsors/columbiaConnectors.png";
-import cor from "../assets/sponsors/cor.png";
-import columbiaChamber from "../assets/sponsors/columbiaChamber.png";
+import cinematictech from "../assets/sponsors/cinematicTech.jpg";
+import cityOfColumbia from "../assets/sponsors/cityOfColumbia.png";
 import colaDaily from "../assets/sponsors/colaDaily.png";
+import colaOBO from "../assets/sponsors/colaOBO.jpg";
+import columbiaChamber from "../assets/sponsors/columbiaChamber.png";
+import columbiaConnectors from "../assets/sponsors/columbiaConnectors.png";
 import colorectalCancer from "../assets/sponsors/colorectalCancer.png";
+import cor from "../assets/sponsors/cor.png";
 import cyberwoven from "../assets/sponsors/cyberwoven.png";
 import dieselLaptops from "../assets/sponsors/dieselLaptops.png";
-import metroRamji from "../assets/sponsors/metroRamji.png"; 
+import dnd from "../assets/sponsors/dnd.png";
+import dominionEnergy from "../assets/sponsors/dominionEnergy.jpg";
+import grace from "../assets/sponsors/grace.png";
+import lfted from "../assets/sponsors/lfted.png";
+import ramji from "../assets/sponsors/ramji.png";
 import outsourced from "../assets/sponsors/outsourced.jpg";
 import palmettoProactive from "../assets/sponsors/palmettoProactive.png";
 import qcKinetix from "../assets/sponsors/qcKinetix.png";
+import scHumanities from "../assets/sponsors/scHumanities.jpg";
+import scTamilSangam from "../assets/sponsors/scTamilSangam.jpg";
+import snaplySites from "../assets/sponsors/snaplySites.png";
+import synergymill from "../assets/sponsors/synergyMill.jpg";
+import sweetwaters from "../assets/sponsors/sweetWaters.jpg";
+import theDesignStudio from "../assets/sponsors/theDesignStudio.png";
 import venture from "../assets/sponsors/venture.jpg";
+import villaTronco from "../assets/sponsors/villaTronco.png";
 
 
 
@@ -43,6 +49,8 @@ export function SponsorsPage() {
       sponsors: [
         { name: "The Design Studio", logo: theDesignStudio, href: "https://sc.edu/study/colleges_schools/artsandsciences/visual_art_and_design/study/undergraduate/studio_art/graphics/course_experience/design_studio/" },
         { name: "LFTED Marketing Management", logo: lfted, href: "https://getlfted.com/" },
+        { name: "Career Center USC", logo: careerCenter, href: "https://www.sc.edu/career" },
+        { name: "Grace", logo: grace, href: "https://graceoutdoor.com/"},
       ],
     },
     {
@@ -51,7 +59,6 @@ export function SponsorsPage() {
         { name: "Bethea Family Dentistry", logo: betheaFamilyDentistry, href: "https://betheafamilydentistry.com/" },
         { name: "Dominion Energy", logo: dominionEnergy, href: "https://www.dominionenergy.com/south-carolina"},
         { name: "Carolinas AAPI Business Alliance", logo: caba, href: "https://www.cabausa.org/"},
-        { name: "Grace", logo: grace, href: "https://graceoutdoor.com/"},
       ],
     },
     { 
@@ -68,6 +75,7 @@ export function SponsorsPage() {
         { name: "D. Nichole Davis", logo: dnd, href: "https://www.dnicholedavis.com/"},
         { name: "Carolina Screen Printers", logo: carolinaScreenPrinters, href: "https://www.carolinascreenprinters.com/"},
         { name: "Cyberwoven", logo: cyberwoven, href: "https://www.cyberwoven.com/"},
+        { name: "SC Tamil Sangam", logo: scTamilSangam, href: "https://www.sctamilsangam.org/"},
         { name: "Colorectal Cancer Prevention Network", logo: colorectalCancer, href: "https://www.crcfacts.com/"},
         { name: "QC Kinetix", logo: qcKinetix, href: " https://qckinetix.com/"},
       ],
@@ -77,15 +85,18 @@ export function SponsorsPage() {
       sponsors: [
         { name: "Villa Tronco", logo: villaTronco, href: "https://www.villatronco.com/"},
         { name: "Break Point", logo: breakPoint, href: "https://www.breakpointcola.com/"},
-        { name: "Metro Ramji", logo: metroRamji, href: "https://metrorealtyllc.com/"},
         { name: "Palmetto Proactive Healthcare", logo: palmettoProactive, href: "https://palmettoproactive.com/"},
+        { name: "Metro Ramji", logo: ramji, href: "https://metrorealtyllc.com/"},
+        { name: "Sweetwaters Coffee & Tea", logo: sweetwaters, href: "https://www.sweetwaterscafe.com/sc-columbia-park-st/"},
       ],
     },
     {
       tier: "Production Sponsors",
       sponsors: [
+        { name: "Synergymill", logo: synergymill, href: "https://www.synergymill.com/"},
+        { name: "Cinematic Technologies", logo: cinematictech, href: "https://www.cinematictechnologies.com/"},
+        { name: "Ambient Media", logo: ambientMedia, href: "https://ambientmediasc.com/"},
         { name: "Outsourced", logo: outsourced, href: "https://www.outsourcedscale.com/"},
-        { name: "Noreta", logo: noreta, href: "https://www.noreta.com/"},
         { name: "Diesel Laptops", logo: dieselLaptops, href: "https://www.diesellaptops.com/"},
       ],
     },
@@ -114,6 +125,7 @@ export function SponsorsPage() {
         { name: "Columbia Connectors", logo: columbiaConnectors, href: "https://www.columbiaconnectors.com/"},
         { name: "COR", logo: cor, href: "https://www.ourcor.org/"},
         { name: "Columbia Chamber", logo: columbiaChamber, href: "https://www.columbiachamber.com/"},
+        { name: "South Carolina Humanities", logo: scHumanities, href: "https://schumanities.org/"},
         { name: "Cola Daily", logo: colaDaily, href: "https://www.coladaily.com/"},
       ],
     },
