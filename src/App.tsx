@@ -12,7 +12,6 @@ import { AboutPage } from "./components/AboutPage";
 import { AboutTEDPage } from "./components/AboutTEDPage";
 import { Footer } from "./components/FooterPage";
 
-type Page = "home" | "speakers" | "sponsors" | "support" | "news" | "about" | "about-ted";
 
 export default function App() {
   const location = useLocation();
