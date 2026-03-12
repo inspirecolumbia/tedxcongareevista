@@ -4,3 +4,8 @@ dist/
 npm_output.log
 dev_server.log
 CLAUDE.md
+# Environment variables — never commit secrets
+.env
+.env.*
+.env.local
+.env.*.local

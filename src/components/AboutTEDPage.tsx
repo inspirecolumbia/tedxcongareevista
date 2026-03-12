@@ -139,7 +139,7 @@ export function AboutTEDPage() {
               <p>
                 Follow TED on{" "}
                 <a
-                  href="http://www.facebook.com/TED"
+                  href="https://www.facebook.com/TED"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#E62B1E] hover:underline font-medium"
@@ -175,7 +175,7 @@ export function AboutTEDPage() {
                 </a>
                 , and{" "}
                 <a
-                  href="http://twitter.com/TEDTalks"
+                  href="https://twitter.com/TEDTalks"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#E62B1E] hover:underline font-medium"
@@ -187,7 +187,9 @@ export function AboutTEDPage() {
 
               <div className="pt-8 text-center flex justify-center">
                 <a
-                  href="#"
+                  href="https://www.ted.com/tedx/events/61037"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-[#E62B1E] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#CC2619] transition-all hover:scale-105 active:scale-95 shadow-md"
                 >
                   View our event page on TED.com

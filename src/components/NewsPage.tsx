@@ -74,7 +74,7 @@ export function NewsPage() {
                     src={NEWS_URL}
                     className="news-iframe"
                     loading="lazy"
-                    sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                    sandbox="allow-forms allow-scripts allow-popups allow-popups-to-escape-sandbox"
                   />
                 </div>
               </div>

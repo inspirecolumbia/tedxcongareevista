@@ -68,7 +68,6 @@ export function SupportPage() {
       <section className="py-12 px-4 pb-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* TODO: Replace href placeholders with actual destination URLs */}
             {supportWays.map((way, index) => (
               <a key={way.title} href={way.href} target="_blank" rel="noopener noreferrer" aria-label={`${way.title} - opens in new window`} className="block">
                 <motion.div
