@@ -21,7 +21,7 @@ export function HomePage() {
 
   const handleStatClick = (stat: (typeof stats)[0]) => {
     if (stat.type === "link" && stat.link) {
-      window.open(stat.link, "_blank");
+      window.open(stat.link, "_blank", "noopener,noreferrer");
     } else if (stat.type === "button" && stat.label === "Speakers") {
       navigate("/speakers");
     }
