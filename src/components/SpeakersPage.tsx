@@ -29,7 +29,7 @@ import MattVaadi from "../assets/speakers/MattVaadi.jpg"
 export function SpeakersPage() {
   const sessions = [
     {
-      label: "Session 1",
+      label: "Session 1: Laying the Groundwork",
       speakers: [
         { name: "Elise Partin", jobTitle: "Mayor of Cayce", bio: "Longest-serving mayor in the Midlands; U.S. State Department speaker and advocate for women in leadership.", title: "It benefits us all to have more women in elected office. Let's make it happen", description: "Why communities thrive with more women leaders and the practical approach needed to elect and support them.", image: ElisePartin },
         { name: "Tyson Keon Brown", jobTitle: "Executive Director, Project OneWay", bio: "Youth and culture leader; consultant to the City of Columbia on generational inclusion and small business development.", title: "Grow Up and Grow Old: Creating Cities of Lifelong Belonging", description: "Transforming cities by connecting young talent to real opportunities so they build and stay in the community long-term.", image: TysonKBrown },
@@ -38,7 +38,7 @@ export function SpeakersPage() {
       ],
     },
     {
-      label: "Session 2",
+      label: "Session 2: Challenging the Status Quo",
       speakers: [
         { name: "Andrew Nye", jobTitle: "Founder and CEO, Qatalyst Health", bio: "Founder of Qatalyst Health; USC alumnus working to reduce nursing home administrative burden through AI.", title: "Nowhere to Go: The Coming Nursing Home Crisis", description: "The looming workforce shortage in long-term care and how tech and policy must work together to protect aging Americans.", image: AndrewNye },
         { name: "Kimberly Smith", jobTitle: "CEO, Health Evolve Technologies", bio: "CEO of Health Evolve Technologies; former hospital system executive and past Board Chair of the Preeclampsia Foundation; PhD student in Global Health Equity.", title: "From Hospital to Home: Tech's Role in Reclaiming America's Maternal Health Story", description: "Why maternal health outcomes improve when care moves beyond hospital walls into homes by blending devices, digital navigation, and social supports to close deadly gaps.", image: KimberlySmith },
@@ -47,7 +47,7 @@ export function SpeakersPage() {
       ],
     },
     {
-      label: "Session 3",
+      label: "Session 3: Building Belonging",
       speakers: [
         { name: "Alvin King", jobTitle: "Founder and Executive Director, Range Fore Hope Foundation", bio: "Retired U.S. Army First Sergeant; founder of Range Fore Hope Foundation supporting veterans and families.", title: "Teeing Off Trauma: How Golf Became a Lifeline for Veterans and Their Families", description: "How golf builds connection, restores identity, and supports healing for veterans and loved ones.", image: AlvinKing },
         { name: "Christina Jones", jobTitle: "Licensed Professional Counselor, University of South Carolina", bio: "Licensed Professional Counselor and Supervisor at USC; neurodivergent advocate and trainer.", title: "Rethinking Spaces Through Neurodivergent Eyes", description: "Practical sensory environment changes, such as sound, light, and layout, that transform exclusion into belonging for neurodivergent people and everyone.", image: ChristinaJones },
@@ -56,7 +56,7 @@ export function SpeakersPage() {
       ],
     },
     {
-      label: "Session 4",
+      label: "Session 4: Staying Aligned With Your Mission",
       speakers: [
         { name: "Kevin Williams", jobTitle: "Co-Founder, Drawbridge Solutions", bio: "Vistage Chair and tech leader; founder of Drawbridge Solutions and owner of Escapology Columbia.", title: "The Irreplaceable Spark: Why Wild Ideas Matter More Than Ever", description: "Generative AI is derivative, which is why human creativity is more crucial than ever for original solutions and careers.", image: KevinWilliams },
         { name: "Tyler Robertson", jobTitle: "Founder and CEO, Diesel Laptops", bio: "Founder who scaled Diesel Laptops from a $1,000 idea to a $100M+ company; blue-collar tech innovator.", title: "Leading When You Are Not in Charge", description: "A practical leadership formula built on clarity, competence, character, and connection for influence without authority.", image: TylerRobertson },
@@ -84,7 +84,7 @@ export function SpeakersPage() {
 
       {/* Speakers Grid */}
       <section className="py-12 px-4 pb-20">
-        <div className="max-w-7xl mx-auto space-y-16">
+        <div className="max-w-4xl mx-auto space-y-16">
           {sessions.map((session, sessionIndex) => (
             <div key={session.label}>
               <motion.h2
