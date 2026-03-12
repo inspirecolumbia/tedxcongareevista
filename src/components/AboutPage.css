@@ -27,7 +27,7 @@
   background-image: url('../assets/2017ColumbiaSkylineTEDx.webp');
   background-size: cover;
   background-position: center 40%;
-  filter: blur(8px);
+  filter: blur(5px);
   pointer-events: none;
   z-index: 0;
 }
@@ -37,7 +37,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.58);
+  background: rgba(0, 0, 0, 0.46);
   pointer-events: none;
   z-index: 1;
 }
@@ -98,7 +98,8 @@
 /* Slightly bigger on desktop */
 @media (min-width: 768px) {
   .about-hero {
-    padding: 7.5rem 0 7rem;
+    /* extra top padding offsets the ~88px fixed navbar so content appears vertically centred */
+    padding: 10.5rem 0 7rem;
   }
   .about-hero-copy {
     font-size: 1.04rem;

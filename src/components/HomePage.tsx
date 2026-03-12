@@ -108,13 +108,13 @@ export function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.45, duration: 0.8 }}
-              className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto"
+              className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto mb-8"
               style={{ textShadow: "0 4px 12px rgba(0,0,0,0.65)" }}
             >
               Join us for an unforgettable journey through innovation, creativity, and inspiration
             </motion.p>
 
-            <div className="mt-14 mb-4">
+            <div className="mt-6 mb-4">
               {/* motion.span so this element animates its own opacity — backdrop-filter
                   on an element animating its OWN opacity works fine; it only breaks
                   when an ANCESTOR has opacity < 1 */}
