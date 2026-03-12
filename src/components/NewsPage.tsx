@@ -26,7 +26,7 @@ export function NewsPage() {
             transition={{ duration: 0.75 }}
           >
             <h1 className="about-hero-title">
-              Latest <span className="text-[#E62B1E]">News</span>
+              Latest News
             </h1>
             <p className="about-hero-subtitle">
               Updates and announcements from TEDxCongaree Vista.

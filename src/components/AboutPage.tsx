@@ -107,7 +107,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
         <div className="max-w-7xl mx-auto text-center px-4">
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="about-hero-title">
-              Why <span className="text-[#E62B1E]">TEDx</span>Congaree Vista?
+              Why TEDxCongaree Vista?
             </h1>
             <p className="about-hero-subtitle">
               A locally organized event bringing together our community to share ideas worth spreading

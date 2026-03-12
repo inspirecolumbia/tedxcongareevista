@@ -144,7 +144,7 @@ export function SponsorsPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="about-hero-title">
-              Our <span className="text-[#E62B1E]">Sponsors</span>
+              Our Sponsors
             </h1>
             <p className="about-hero-subtitle">
               Thank you to our generous partners who make TEDxCongaree Vista possible

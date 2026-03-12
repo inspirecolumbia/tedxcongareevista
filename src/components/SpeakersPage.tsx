@@ -73,7 +73,7 @@ export function SpeakersPage() {
         <div className="max-w-7xl mx-auto text-center px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="about-hero-title">
-              Our <span className="text-[#E62B1E]">Speakers</span>
+              Our Speakers
             </h1>
             <p className="about-hero-subtitle">
               Meet the visionaries, innovators, and changemakers who will share their groundbreaking ideas

@@ -101,7 +101,7 @@ export function HomePage() {
                   "0 4px 8px rgba(0,0,0,0.75), 0 10px 20px rgba(0,0,0,0.6), 0 2px 0 rgba(0,0,0,0.35)",
               }}
             >
-              Bringing <span className="font-black text-[#E62B1E]" style={{ fontFamily: '"Helvetica Neue", Helvetica, sans-serif', letterSpacing: '-0.02em' }}>TEDx</span> Back to Columbia
+              Bringing TEDx Back to Columbia
             </motion.h1>
 
             <motion.p
@@ -114,7 +114,7 @@ export function HomePage() {
               Join us for an unforgettable journey through innovation, creativity, and inspiration
             </motion.p>
 
-            <div className="mt-8 mb-4">
+            <div className="mt-14 mb-4">
               {/* motion.span so this element animates its own opacity — backdrop-filter
                   on an element animating its OWN opacity works fine; it only breaks
                   when an ANCESTOR has opacity < 1 */}
@@ -122,7 +122,7 @@ export function HomePage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.55, duration: 0.8 }}
-                className="inline-block px-8 py-3 rounded-full bg-black/40 border border-white/20 text-white font-bold text-lg sm:text-xl shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
+                className="inline-block px-12 py-4 rounded-full bg-black/40 border border-white/20 text-white font-bold text-lg sm:text-xl shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
                 style={{
                   textShadow: "0 2px 4px rgba(0,0,0,0.5)",
                   backdropFilter: "blur(12px)",
