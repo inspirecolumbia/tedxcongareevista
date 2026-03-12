@@ -6,11 +6,6 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 import longLogoBlack from "../assets/longlogo-black.png";
 
-interface NavigationProps {
-  currentPage: string;
-  onNavigate: (page: string) => void;
-}
-
 export function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
