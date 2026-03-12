@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 import longLogoBlack from "../assets/longlogo-black.png";
@@ -11,7 +11,7 @@ interface NavigationProps {
   onNavigate: (page: string) => void;
 }
 
-export function Navigation({ currentPage, onNavigate }: NavigationProps) {
+export function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
 
