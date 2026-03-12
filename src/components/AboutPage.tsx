@@ -1,7 +1,7 @@
 // AboutPage.tsx
 import { useMemo, useState } from "react";
 import { motion } from "motion/react";
-import { Lightbulb, Target, Users, Heart, ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import "./AboutPage.css";
 import "./NewsPage.css";
