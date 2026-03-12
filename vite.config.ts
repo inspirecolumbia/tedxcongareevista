@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 
 export default defineConfig({
-  // IMPORTANT for GitHub Pages under /tedxcongareevista/
   base: '/',
 
   plugins: [react()],

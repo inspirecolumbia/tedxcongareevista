@@ -17,7 +17,7 @@ The official website for **TEDxCongaree Vista**, a TEDx event independently orga
 | Animations | [Motion](https://motion.dev/) (Framer Motion) |
 | Routing | [React Router DOM v7](https://reactrouter.com/) |
 | Icons | [Lucide React](https://lucide.dev/) |
-| Deployment | [GitHub Pages](https://pages.github.com/) via `gh-pages` |
+| Deployment | [Vercel](https://vercel.com/) |
 
 ---
 
