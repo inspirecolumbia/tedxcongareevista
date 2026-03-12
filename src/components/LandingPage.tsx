@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import tedxLogo from "../assets/logo-white.png";
-import heroImg from "../assets/2017ColumbiaSkylineTEDx.jpg";
+import tedxLogo from "../assets/logo-white.webp";
+import heroImg from "../assets/2017ColumbiaSkylineTEDx.webp";
 
 interface LandingPageProps {
   onEnter: () => void;

@@ -1,5 +1,5 @@
 import { Instagram, Facebook, Linkedin, Youtube, Mail } from "lucide-react";
-import footerLogo from "../assets/longlogo-black.png";
+import footerLogo from "../assets/longlogo-black.webp";
 import { Link } from "react-router-dom";
 
 export function Footer() {

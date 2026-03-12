@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-import longLogoBlack from "../assets/longlogo-black.png";
+import longLogoBlack from "../assets/longlogo-black.webp";
 
 export function Navigation() {
   const navigate = useNavigate();

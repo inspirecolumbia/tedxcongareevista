@@ -3,28 +3,28 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import "./AboutPage.css";
 import "./NewsPage.css"
 
-import ElisePartin from "../assets/speakers/ElisePartin.jpg"
-import TysonKBrown from "../assets/speakers/TysonKBrown.jpg"
-import IvanSegura from "../assets/speakers/IvanSegura.jpg"
-import ShannonIvey from "../assets/speakers/ShannonIvey.jpg"
-import AndrewNye from "../assets/speakers/AndrewNye.jpg"
-import KimberlySmith from "../assets/speakers/KimberlySmith.jpg"
-import FabioMatta from "../assets/speakers/FabioMatta.jpg"
-import MelissaBoylan from "../assets/speakers/MelissaBoylan.jpg"
-import AlvinKing from "../assets/speakers/AlvinKing.jpg"
-import ChristinaJones from "../assets/speakers/ChristinaJones.jpg"
-import RisdonNSlate from "../assets/speakers/RisdonNSlate.jpg"
-import MajdAbdallah from "../assets/speakers/MajdAbdallah.jpg"
-import KevinWilliams from "../assets/speakers/KevinWilliams.jpg"
-import TylerRobertson from "../assets/speakers/TylerRobertson.jpg"
-import JordanThomas from "../assets/speakers/JordanThomas.jpg"
-import MattVaadi from "../assets/speakers/MattVaadi.jpg"
+import ElisePartin from "../assets/speakers/ElisePartin.webp"
+import TysonKBrown from "../assets/speakers/TysonKBrown.webp"
+import IvanSegura from "../assets/speakers/IvanSegura.webp"
+import ShannonIvey from "../assets/speakers/ShannonIvey.webp"
+import AndrewNye from "../assets/speakers/AndrewNye.webp"
+import KimberlySmith from "../assets/speakers/KimberlySmith.webp"
+import FabioMatta from "../assets/speakers/FabioMatta.webp"
+import MelissaBoylan from "../assets/speakers/MelissaBoylan.webp"
+import AlvinKing from "../assets/speakers/AlvinKing.webp"
+import ChristinaJones from "../assets/speakers/ChristinaJones.webp"
+import RisdonNSlate from "../assets/speakers/RisdonNSlate.webp"
+import MajdAbdallah from "../assets/speakers/MajdAbdallah.webp"
+import KevinWilliams from "../assets/speakers/KevinWilliams.webp"
+import TylerRobertson from "../assets/speakers/TylerRobertson.webp"
+import JordanThomas from "../assets/speakers/JordanThomas.webp"
+import MattVaadi from "../assets/speakers/MattVaadi.webp"
 
 
 // If this file lives in src/pages/, change the imports above to:
-// import female1 from "../../assets/sample-speaker-female1.png";
-// import female2 from "../../assets/sample-speaker-female2.png";
-// import male from "../../assets/sample-speaker-male.png";
+// import female1 from "../../assets/sample-speaker-female1.webp";
+// import female2 from "../../assets/sample-speaker-female2.webp";
+// import male from "../../assets/sample-speaker-male.webp";
 
 export function SpeakersPage() {
   const sessions = [
