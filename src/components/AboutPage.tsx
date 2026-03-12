@@ -24,12 +24,6 @@ type TeamMember = {
 };
 
 export function AboutPage() {
-  const values = [
-    { icon: Lightbulb, title: "Innovation", description: "We celebrate bold ideas and creative thinking that challenge the status quo" },
-    { icon: Target, title: "Impact", description: "We're committed to ideas that create meaningful change in our community" },
-    { icon: Users, title: "Inclusivity", description: "We believe diverse perspectives lead to richer conversations and better solutions" },
-    { icon: Heart, title: "Passion", description: "We're driven by genuine enthusiasm for ideas that inspire and transform" },
-  ];
 
   const volunteerFormUrl =
     "https://docs.google.com/forms/d/e/1FAIpQLScFrVyPWl-e2bKzhG4zqqTGjCIn4XrtUKUvkGjOpkvb5qpxUg/viewform?pli=1";
