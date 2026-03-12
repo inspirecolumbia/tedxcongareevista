@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Calendar, MapPin, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import heroImg from "../assets/2017ColumbiaSkylineTEDx.jpg";
+import heroImg from "../assets/2017ColumbiaSkylineTEDx.webp";
 
 interface HomePageProps {
   onNavigate?: (page: string) => void;
@@ -67,6 +67,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
               src={heroImg}
               alt="Congaree Vista Aerial View"
               className="w-full h-full object-cover"
+              fetchPriority="high"
+              decoding="async"
             />
 
             {/* readability layer */}
