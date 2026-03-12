@@ -1,7 +1,7 @@
 // AboutPage.tsx
 import { useMemo, useState } from "react";
 import { motion } from "motion/react";
-import { Lightbulb, Target, Users, Heart, ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import "./AboutPage.css";
 import "./NewsPage.css";
@@ -24,12 +24,6 @@ type TeamMember = {
 };
 
 export function AboutPage() {
-  const values = [
-    { icon: Lightbulb, title: "Innovation", description: "We celebrate bold ideas and creative thinking that challenge the status quo" },
-    { icon: Target, title: "Impact", description: "We're committed to ideas that create meaningful change in our community" },
-    { icon: Users, title: "Inclusivity", description: "We believe diverse perspectives lead to richer conversations and better solutions" },
-    { icon: Heart, title: "Passion", description: "We're driven by genuine enthusiasm for ideas that inspire and transform" },
-  ];
 
   const volunteerFormUrl =
     "https://docs.google.com/forms/d/e/1FAIpQLScFrVyPWl-e2bKzhG4zqqTGjCIn4XrtUKUvkGjOpkvb5qpxUg/viewform?pli=1";
@@ -145,46 +139,6 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl mb-6 text-black">Our Values</h2>
-            <p className="text-xl text-gray-600">The principles that guide everything we do</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * index, duration: 0.6 }}
-                whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="inline-flex items-center justify-center w-16 h-16 bg-[#E62B1E] rounded-full mb-6"
-                >
-                  <value.icon className="text-white" size={28} />
-                </motion.div>
-                <h3 className="text-2xl mb-3 text-black">{value.title}</h3>
-                <p className="text-gray-600 text-lg">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Volunteers CTA + Nonprofit Info */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto">
@@ -263,7 +217,8 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
               and connection.
             </p>
             <p>
-              These local, self-organized events are branded TEDx, where x = independently organized TED event.               The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized.
+              These local, self-organized events are branded TEDx, where x = independently organized TED event.
+                The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized.
             </p>
             <p className="text-center pt-6">
               <span className="text-black">
@@ -320,7 +275,6 @@ function TeamGridSpeakerStyle({ teamMembers }: { teamMembers: TeamMember[] }) {
                   transition={{ duration: 0.45 }}
                   whileHover={{ y: -8 }}
                   onClick={() => setActiveIdx(isActive ? null : absoluteIndex)}
-                  onFocus={() => setActiveIdx(absoluteIndex)}
                   className="w-full text-left outline-none"
                   aria-expanded={isActive}
                 >
@@ -364,15 +318,13 @@ function TeamGridSpeakerStyle({ teamMembers }: { teamMembers: TeamMember[] }) {
                   transition={{ duration: 0.25, ease: "easeOut" }}
                   className="overflow-hidden"
                 >
-                  {isActive && (
-                    <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-                      <h4 className="text-lg font-semibold text-black">{member.name}</h4>
-                      <p className="text-[#E62B1E] font-medium mb-3">{member.role}</p>
-                      <p className="text-base text-gray-700 whitespace-pre-line leading-relaxed">
-                        {member.bio}
-                      </p>
-                    </div>
-                  )}
+                  <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                    <h4 className="text-lg font-semibold text-black">{member.name}</h4>
+                    <p className="text-[#E62B1E] font-medium mb-3">{member.role}</p>
+                    <p className="text-base text-gray-700 whitespace-pre-line leading-relaxed">
+                      {member.bio}
+                    </p>
+                  </div>
                 </motion.div>
               </div>
             );
