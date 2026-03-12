@@ -71,7 +71,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
                 onClick={() => navigate(item.id === "home" ? "/" : `/${item.id}`)}
-                className={`relative px-1 py-2 transition-colors ${
+                className={`relative px-1 py-2 transition-colors cursor-pointer ${
                   currentPathPage === item.id
                     ? "text-[#E62B1E]"
                     : "text-gray-700 hover:text-[#E62B1E]"
@@ -116,7 +116,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   navigate(item.id === "home" ? "/" : `/${item.id}`);
                   setMobileMenuOpen(false);
                 }}
-                className={`block w-full text-center px-4 py-3 rounded-lg ${
+                className={`block w-full text-center px-4 py-3 rounded-lg cursor-pointer ${
                   currentPathPage === item.id
                     ? "text-[#E62B1E] bg-red-50"
                     : "text-gray-700 hover:bg-gray-50"
