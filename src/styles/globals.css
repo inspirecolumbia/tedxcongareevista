@@ -31,6 +31,10 @@
   }
 }
 
-html {
+html,
+body {
   font-size: var(--font-size);
+  /* Mirror the app wrapper gradient so mobile overscroll reveals the same background */
+  background: linear-gradient(to bottom right, #000000, rgba(0, 0, 0, 0.8), #000000);
+  background-attachment: fixed;
 }
