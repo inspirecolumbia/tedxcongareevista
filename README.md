@@ -54,7 +54,7 @@ The official website for **TEDxCongaree Vista**, a TEDx event independently orga
    ```bash
    npm run dev
    ```
-   The site will be available at `http://localhost:5173` by default.
+   The site will be available at `http://localhost:3000` by default.
 
 ---
 
@@ -68,40 +68,6 @@ The production-ready files will be output to the `dist/` directory.
 
 ---
 
-## Deployment
-
-The site is deployed to GitHub Pages. To deploy a new version:
-
-```bash
-npm run deploy
-```
-
-This runs `vite build` and then publishes the `dist/` folder to the `gh-pages` branch.
-
----
-
-## Project Structure
-
-```
-tedxcongareevista/
-├── public/             # Static assets
-├── src/
-│   ├── assets/         # Images, headshots, and other media
-│   ├── components/     # React page and UI components
-│   │   ├── ui/         # Reusable shadcn/ui base components
-│   │   └── figma/      # Figma-generated utility components
-│   ├── styles/         # Global and shared CSS
-│   ├── types/          # Shared TypeScript types
-│   ├── App.tsx         # Root component with routing
-│   ├── main.tsx        # Application entry point
-│   └── index.css       # Global styles
-├── index.html          # HTML entry point
-├── vite.config.ts      # Vite configuration
-└── package.json
-```
-
----
-
 ## Attributions
 
 - UI components from [shadcn/ui](https://ui.shadcn.com/), used under the [MIT License](https://github.com/shadcn-ui/ui/blob/main/LICENSE.md).
@@ -111,4 +77,4 @@ tedxcongareevista/
 
 ## Contact
 
-For questions about the event or website, reach out to the team at **info@tedxcongareevista.com**.
+For questions about the event or website, reach out to the team at **dev@tedxcongareevista.com**.
