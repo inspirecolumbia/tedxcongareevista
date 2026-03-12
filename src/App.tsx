@@ -73,7 +73,7 @@ export default function App() {
 
         {/* Only animate page content */}
         <main className="flex-1">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
             <motion.div
               key={location.pathname}
               initial={{ opacity: 0, y: 20 }}
