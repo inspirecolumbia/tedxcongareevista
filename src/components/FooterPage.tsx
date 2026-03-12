@@ -1,5 +1,5 @@
 import { Instagram, Facebook, Linkedin, Youtube, Mail } from "lucide-react";
-import footerLogo from "../assets/longlogo-black.png";
+import footerLogo from "../assets/longlogo-black.webp";
 import { Link } from "react-router-dom";
 
 export function Footer() {
@@ -32,11 +32,13 @@ export function Footer() {
       <div className="mx-auto w-full max-w-6xl">
         <div className="flex flex-col items-center text-center">
           {/* Logo */}
-          <img
-            src={footerLogo}
-            alt="TEDxCongaree Vista Footer Logo"
-            className="w-full max-w-2xl h-auto object-contain"
-          />
+          <Link to="/">
+            <img
+              src={footerLogo}
+              alt="TEDxCongaree Vista Footer Logo"
+              className="w-full max-w-2xl h-auto object-contain cursor-pointer"
+            />
+          </Link>
 
           {/* Disclaimer + Copyright */}
           <div className="mt-4">
@@ -72,7 +74,7 @@ export function Footer() {
                   key={i}
                   href={href}
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#E62B1E] transition hover:scale-110"
+                  className="flex h-10 w-10 items-center justify-center text-black transition hover:scale-110"
                 >
                   <Icon className="h-5 w-5" />
                 </a>

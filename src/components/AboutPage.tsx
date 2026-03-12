@@ -7,14 +7,14 @@ import "./AboutPage.css";
 import "./NewsPage.css";
 
 // ✅ Move these images into: src/assets/headshots/team/
-import Shyam from "../assets/headshots/team/shyam.jpg";
-import Darssan from "../assets/headshots/team/darssan.jpg";
-import Luke from "../assets/headshots/team/luke.jpg";
-import Sai from "../assets/headshots/team/sai.jpg";
-import Simran from "../assets/headshots/team/simran.jpg";
-import Vaishali from "../assets/headshots/team/vaishali.jpg";
-import Mohin from "../assets/headshots/team/mohin.jpg";
-import Owen from "../assets/headshots/team/owen.jpg";
+import Shyam from "../assets/headshots/team/shyam.webp";
+import Darssan from "../assets/headshots/team/darssan.webp";
+import Luke from "../assets/headshots/team/luke.webp";
+import Sai from "../assets/headshots/team/sai.webp";
+import Simran from "../assets/headshots/team/simran.webp";
+import Vaishali from "../assets/headshots/team/vaishali.webp";
+import Mohin from "../assets/headshots/team/mohin.webp";
+import Owen from "../assets/headshots/team/owen.webp";
 
 type TeamMember = {
   name: string;
@@ -107,7 +107,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
         <div className="max-w-7xl mx-auto text-center px-4">
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="about-hero-title">
-              Why <span className="text-[#E62B1E]">TEDx</span>Congaree Vista?
+              Why TEDxCongaree Vista?
             </h1>
             <p className="about-hero-subtitle">
               A locally organized event bringing together our community to share ideas worth spreading

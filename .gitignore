@@ -3,3 +3,4 @@ node_modules
 dist/
 npm_output.log
 dev_server.log
+CLAUDE.md

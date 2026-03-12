@@ -12,7 +12,6 @@ import { AboutPage } from "./components/AboutPage";
 import { AboutTEDPage } from "./components/AboutTEDPage";
 import { Footer } from "./components/FooterPage";
 
-type Page = "home" | "speakers" | "sponsors" | "support" | "news" | "about" | "about-ted";
 
 export default function App() {
   const location = useLocation();
@@ -73,7 +72,7 @@ export default function App() {
 
         {/* Only animate page content */}
         <main className="flex-1">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
             <motion.div
               key={location.pathname}
               initial={{ opacity: 0, y: 20 }}

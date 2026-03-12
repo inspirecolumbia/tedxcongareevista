@@ -12,32 +12,39 @@
 .about-hero {
   position: relative;
   padding: 1.5rem 0 6rem;
-
-  /* Main gradient */
-  background: linear-gradient(100deg, #7a1c5c 0%, #5b2c91 45%, #1e3a8a 100%);
-
   color: #fff;
   overflow: hidden;
+  /* dark fallback while image loads */
+  background: #111;
 }
 
-
-
+/* Blurred skyline photo */
 .about-hero::before {
-  /* subtle bloom to make it feel premium */
   content: "";
   position: absolute;
-  inset: -2px;
-  background:
-    radial-gradient(900px 520px at 18% 18%, rgba(255, 255, 255, 0.10), transparent 60%),
-    radial-gradient(900px 520px at 82% 18%, rgba(255, 255, 255, 0.06), transparent 62%),
-    radial-gradient(700px 420px at 50% 105%, rgba(0, 0, 0, 0.22), transparent 60%);
+  /* extend past edges so blur doesn't leave transparent fringe */
+  inset: -24px;
+  background-image: url('../assets/2017ColumbiaSkylineTEDx.webp');
+  background-size: cover;
+  background-position: center 40%;
+  filter: blur(5px);
   pointer-events: none;
-  opacity: 0.9;
+  z-index: 0;
+}
+
+/* Dark scrim so white text stays readable */
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.46);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .about-hero > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .about-hero-title {
@@ -91,7 +98,8 @@
 /* Slightly bigger on desktop */
 @media (min-width: 768px) {
   .about-hero {
-    padding: 7.5rem 0 7rem;
+    /* extra top padding offsets the ~88px fixed navbar so content appears vertically centred */
+    padding: 10.5rem 0 7rem;
   }
   .about-hero-copy {
     font-size: 1.04rem;

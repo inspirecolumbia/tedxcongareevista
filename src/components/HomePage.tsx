@@ -2,13 +2,9 @@ import { motion } from "motion/react";
 import { Calendar, MapPin, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import heroImg from "../assets/2017ColumbiaSkylineTEDx.jpg";
+import heroImg from "../assets/2017ColumbiaSkylineTEDx.webp";
 
-interface HomePageProps {
-  onNavigate?: (page: string) => void;
-}
-
-export function HomePage({ onNavigate }: HomePageProps) {
+export function HomePage() {
   const navigate = useNavigate();
   const stats = [
     { icon: Calendar, label: "Date", value: "March 14, 2026", type: "text" as const },
@@ -67,6 +63,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
               src={heroImg}
               alt="Congaree Vista Aerial View"
               className="w-full h-full object-cover"
+              fetchPriority="high"
+              decoding="async"
             />
 
             {/* readability layer */}
@@ -84,33 +82,47 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </motion.div>
 
         <div className="relative z-10 h-full flex items-center justify-center px-4">
+          {/* Outer wrapper only translates — no opacity — so backdrop-filter children
+              are never inside an opacity < 1 compositing layer */}
           <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 28 }}
+            animate={{ y: 0 }}
             transition={{ delay: 0.35, duration: 0.8 }}
             className="text-center text-white flex flex-col items-center"
           >
             <div>
-              <h1
+              <motion.h1
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.35, duration: 0.8 }}
               className="text-5xl sm:text-6xl md:text-7xl mb-6"
               style={{
                 textShadow:
                   "0 4px 8px rgba(0,0,0,0.75), 0 10px 20px rgba(0,0,0,0.6), 0 2px 0 rgba(0,0,0,0.35)",
               }}
             >
-              Bringing <span className="font-black text-[#E62B1E]" style={{ fontFamily: '"Helvetica Neue", Helvetica, sans-serif', letterSpacing: '-0.02em' }}>TEDx</span> Back to Columbia
-            </h1>
+              Bringing TEDx Back to Columbia
+            </motion.h1>
 
-            <p
-              className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto"
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.45, duration: 0.8 }}
+              className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto mb-16"
               style={{ textShadow: "0 4px 12px rgba(0,0,0,0.65)" }}
             >
               Join us for an unforgettable journey through innovation, creativity, and inspiration
-            </p>
+            </motion.p>
 
-            <div className="mt-8 mb-4">
-              <span
-                className="inline-block px-8 py-3 rounded-full bg-black/40 border border-white/20 text-white font-bold text-lg sm:text-xl shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
+            <div className="mt-6 mb-4">
+              {/* motion.span so this element animates its own opacity — backdrop-filter
+                  on an element animating its OWN opacity works fine; it only breaks
+                  when an ANCESTOR has opacity < 1 */}
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.55, duration: 0.8 }}
+                className="inline-block px-12 py-4 rounded-full bg-black/40 border border-white/20 text-white font-bold text-lg sm:text-xl shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
                 style={{
                   textShadow: "0 2px 4px rgba(0,0,0,0.5)",
                   backdropFilter: "blur(12px)",
@@ -118,7 +130,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 }}
               >
                 Saturday, March 14th, 2026 10 AM - 5 PM
-              </span>
+              </motion.span>
             </div>
             </div>
 

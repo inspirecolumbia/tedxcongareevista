@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 import "./AboutPage.css";
 
 export function AboutTEDPage() {
@@ -13,7 +12,7 @@ export function AboutTEDPage() {
         <div className="max-w-7xl mx-auto text-center px-4">
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="about-hero-title">
-              About <span className="text-[#E62B1E]">TEDx</span>
+              About TEDx
             </h1>
             <p className="about-hero-subtitle">
               x = independently organized event

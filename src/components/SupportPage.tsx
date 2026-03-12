@@ -55,7 +55,7 @@ export function SupportPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="about-hero-title">
-              <span className="text-[#E62B1E]">Support</span> Our Mission
+              Support Our Mission
             </h1>
             <p className="about-hero-subtitle">
               Help us create a platform for ideas worth spreading in our community
