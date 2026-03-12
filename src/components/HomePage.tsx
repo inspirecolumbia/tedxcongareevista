@@ -4,11 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import heroImg from "../assets/2017ColumbiaSkylineTEDx.webp";
 
-interface HomePageProps {
-  onNavigate?: (page: string) => void;
-}
-
-export function HomePage({ onNavigate }: HomePageProps) {
+export function HomePage() {
   const navigate = useNavigate();
   const stats = [
     { icon: Calendar, label: "Date", value: "March 14, 2026", type: "text" as const },
