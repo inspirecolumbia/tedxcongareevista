@@ -108,7 +108,7 @@ export function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.45, duration: 0.8 }}
-              className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto mb-8"
+              className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto mb-16"
               style={{ textShadow: "0 4px 12px rgba(0,0,0,0.65)" }}
             >
               Join us for an unforgettable journey through innovation, creativity, and inspiration
