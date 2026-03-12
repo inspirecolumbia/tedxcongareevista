@@ -275,7 +275,6 @@ function TeamGridSpeakerStyle({ teamMembers }: { teamMembers: TeamMember[] }) {
                   transition={{ duration: 0.45 }}
                   whileHover={{ y: -8 }}
                   onClick={() => setActiveIdx(isActive ? null : absoluteIndex)}
-                  onFocus={() => setActiveIdx(absoluteIndex)}
                   className="w-full text-left outline-none"
                   aria-expanded={isActive}
                 >
@@ -319,15 +318,13 @@ function TeamGridSpeakerStyle({ teamMembers }: { teamMembers: TeamMember[] }) {
                   transition={{ duration: 0.25, ease: "easeOut" }}
                   className="overflow-hidden"
                 >
-                  {isActive && (
-                    <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-                      <h4 className="text-lg font-semibold text-black">{member.name}</h4>
-                      <p className="text-[#E62B1E] font-medium mb-3">{member.role}</p>
-                      <p className="text-base text-gray-700 whitespace-pre-line leading-relaxed">
-                        {member.bio}
-                      </p>
-                    </div>
-                  )}
+                  <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                    <h4 className="text-lg font-semibold text-black">{member.name}</h4>
+                    <p className="text-[#E62B1E] font-medium mb-3">{member.role}</p>
+                    <p className="text-base text-gray-700 whitespace-pre-line leading-relaxed">
+                      {member.bio}
+                    </p>
+                  </div>
                 </motion.div>
               </div>
             );
