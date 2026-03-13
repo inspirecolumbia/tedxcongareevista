@@ -27,9 +27,10 @@ import dnd from "../assets/sponsors/dnd.webp";
 import dominionEnergy from "../assets/sponsors/dominionEnergy.webp";
 import grace from "../assets/sponsors/grace.webp";
 import lfted from "../assets/sponsors/lfted.webp";
-import ramji from "../assets/sponsors/ramji.webp";
+import noreta from "../assets/sponsors/noreta.webp";
 import outsourced from "../assets/sponsors/outsourced.webp";
 import palmettoProactive from "../assets/sponsors/palmettoProactive.webp";
+import ramji from "../assets/sponsors/ramji.webp";
 import qcKinetix from "../assets/sponsors/qcKinetix.webp";
 import scHumanities from "../assets/sponsors/scHumanities.webp";
 import scTamilSangam from "../assets/sponsors/scTamilSangam.webp";
@@ -97,6 +98,7 @@ export function SponsorsPage() {
         { name: "Cinematic Technologies", logo: cinematictech, href: "https://www.cinematictechnologies.com/"},
         { name: "Ambient Media", logo: ambientMedia, href: "https://ambientmediasc.com/"},
         { name: "Outsourced", logo: outsourced, href: "https://www.outsourcedscale.com/"},
+        { name: "Noreta", logo: noreta, href: "https://www.noreta.com/"},
         { name: "Diesel Laptops", logo: dieselLaptops, href: "https://www.diesellaptops.com/"},
       ],
     },
