@@ -76,7 +76,7 @@ export function SpeakersPage() {
               Our Speakers
             </h1>
             <p className="about-hero-subtitle">
-              Meet the visionaries, innovators, and changemakers who will share their groundbreaking ideas
+              Meet the visionaries, innovators, and changemakers who shared their groundbreaking ideas
             </p>
           </motion.div>
         </div>

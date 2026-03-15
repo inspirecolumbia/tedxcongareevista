@@ -29,7 +29,7 @@ export function NewsPage() {
               Latest News
             </h1>
             <p className="about-hero-subtitle">
-              Updates and announcements from TEDxCongaree Vista.
+              Updates and announcements from the TEDxCongaree Vista team
             </p>
           </motion.div>
         </div>
