@@ -111,7 +111,7 @@ export function HomePage() {
               className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto mb-16"
               style={{ textShadow: "0 4px 12px rgba(0,0,0,0.65)" }}
             >
-              Join us for an unforgettable journey through innovation, creativity, and inspiration
+              An unforgettable journey through innovation, creativity, and inspiration
             </motion.p>
 
             <div className="mt-6 mb-4">
@@ -166,7 +166,7 @@ export function HomePage() {
                     "
                   />
                   <span className="relative flex items-center gap-2">
-                    🔴 Watch live on YouTube
+                    🔴 Watch recording on YouTube
                   </span>
                 </motion.a>
               </div>

@@ -149,7 +149,7 @@ export function SponsorsPage() {
               Our Sponsors
             </h1>
             <p className="about-hero-subtitle">
-              Thank you to our generous partners who make TEDxCongaree Vista possible
+              Thank you to our generous partners who made TEDxCongaree Vista possible
             </p>
           </motion.div>
         </div>
