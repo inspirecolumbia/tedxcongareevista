@@ -1,9 +1,10 @@
-node_modules
+node_modules/
 .idea/
 dist/
 npm_output.log
 dev_server.log
 CLAUDE.md
+.claude/
 # Environment variables — never commit secrets
 .env
 .env.*
