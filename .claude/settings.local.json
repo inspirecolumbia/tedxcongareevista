@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(node -e \"const sharp = require\\('sharp'\\); console.log\\('sharp version:', sharp.versions\\);\" 2>/dev/null || echo \"sharp not found or error\")",
-      "Bash(sort -k2)"
-    ]
-  }
-}
