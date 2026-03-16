@@ -15,7 +15,7 @@ export function SupportPage() {
     {
       icon: Heart,
       title: "Donate",
-      description: "Your generous donation to ChangeMakers Events helps us continue spreading ideas that matter",
+      description: "Your generous donation to Inspire Columbia helps us continue spreading ideas that matter",
       action: "Make a Donation",
       href: "https://www.zeffy.com/en-US/donation-form/support-educational-events-in-columbia-sc",
     },

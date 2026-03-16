@@ -56,10 +56,10 @@ export function Footer() {
             <p className="text-sm text-black">
               © 2026{" "}
               <a
-                href="https://changemakersevents.org/"
+                href="https://inspirecolumbia.org/"
                 className="!underline underline-offset-4"
               >
-                ChangeMakers Events Inc.
+                Inspire Columbia Inc.
               </a>
               , a 501(c)3 nonprofit. All rights reserved.
             </p>

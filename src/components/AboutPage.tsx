@@ -60,7 +60,7 @@ He is the founder of MedElem, a program that delivers hands-on health education 
       name: "Luke Jannazzo",
       role: "Event Manager (Co-organizer)",
       photoUrl: Luke,
-      bio: `Luke Jannazzo is a junior Computer Engineering student at the University of South Carolina, with professional experience spanning state government, startups, and small businesses. He currently serves as Event Manager for TEDxCongaree Vista, overseeing day-of logistics, ticketing, venue procurement, and catering. He also founded ChangeMakers Events, the parent nonprofit organization of TEDxCongaree Vista.
+      bio: `Luke Jannazzo is a junior Computer Engineering student at the University of South Carolina, with professional experience spanning state government, startups, and small businesses. He currently serves as Event Manager for TEDxCongaree Vista, overseeing day-of logistics, ticketing, venue procurement, and catering. He also founded Inspire Columbia, the parent nonprofit organization of TEDxCongaree Vista.
 He is an introductory physics teaching assistant, and serves as president of Kappa Theta Pi, an organization connecting nonprofits with students to provide technology consulting free of charge. He is passionate about the intersection of technology, business, finance, and world issues, and strives to have an impact on these areas.`,
     },
     {
@@ -187,7 +187,7 @@ On campus, he founded Kappa Theta Pi, a philanthropic organization that provides
             <div className="nonprofit-card rounded-2xl border border-gray-200 bg-white">
               <h3 className="text-2xl md:text-3xl mb-4 text-black">A 100% volunteer-driven nonprofit</h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                TEDxCongaree Vista is operated by ChangeMakers Events, a South Carolina 501(c)3 nonprofit and 100% volunteer-driven
+                TEDxCongaree Vista was operated by Inspire Columbia, a South Carolina 501(c)3 nonprofit and 100% volunteer-driven
                 organization. Our team dedicates time, energy, and creativity to build a platform that brings people together
                 through the power of change. Funds raised through sponsorships and ticket sales stay right here in the local
                 community, helping cover essential costs like printing, signage, promotion, audio/visual needs, food, and venue
