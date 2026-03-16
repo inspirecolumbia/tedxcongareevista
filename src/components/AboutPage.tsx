@@ -15,6 +15,7 @@ import Simran from "../assets/headshots/team/simran.webp";
 import Vaishali from "../assets/headshots/team/vaishali.webp";
 import Mohin from "../assets/headshots/team/mohin.webp";
 import Owen from "../assets/headshots/team/owen.webp";
+import Amenah from "../assets/headshots/team/amenah.webp";
 
 type TeamMember = {
   name: string;
@@ -83,6 +84,13 @@ On campus, she is a peer leader for the school’s University 101 program, and s
       photoUrl: Vaishali,
       bio: `Vaishali Allibada is a freshman Engineering student at the University of South Carolina – Columbia. She serves as the Associate Director of Curation and Sponsorships & Partnerships Manager for TEDxCongaree Vista, where she helps spotlight innovative voices in STEM and create platforms for students and changemakers to share their work.
 On campus, Vaishali is a STEM Signing Day Honoree, University Scholar, and undergraduate researcher in the ARTS-Lab. She is active in the Society of Women Engineers (SWE) and Engineers Without Borders, contributing to projects that apply engineering to real-world challenges. Passionate about using technology to drive innovation, she seeks to empower others to think creatively, solve problems, and make meaningful contributions to STEM and the wider Columbia community.`,
+    },
+    {
+      name: "Dr. Amenah Salman",
+      role: "Mentorship Director",
+      photoUrl: Amenah,
+      bio: `Amenah Salman is a full-time English professor at Midlands Technical College. She holds a PhD in Linguistics from the University of South Carolina, where she taught a variety of Linguistics and English courses from 2021 to 2025. 
+      Her research in sociophonetics and underrepresented languages focuses on dialects that reflect marginalized communities, because she believes diversity isn't just about who's in the room; it's about whose voices we amplify and whose stories we choose to prioritize. She joined the TEDxCongaree Vista curation panel and mentorship team to help drive positive change in her community and beyond.`,
     },
     {
       name: "Mohin Amin",
