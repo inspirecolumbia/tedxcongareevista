@@ -15,6 +15,8 @@ import Simran from "../assets/headshots/team/simran.webp";
 import Vaishali from "../assets/headshots/team/vaishali.webp";
 import Mohin from "../assets/headshots/team/mohin.webp";
 import Owen from "../assets/headshots/team/owen.webp";
+import Amenah from "../assets/headshots/team/amenah.webp";
+import Tyler from "../assets/headshots/team/tyler.webp";
 
 type TeamMember = {
   name: string;
@@ -90,6 +92,19 @@ On campus, Vaishali is a STEM Signing Day Honoree, University Scholar, and under
       photoUrl: Mohin,
       bio: `Mohin Amin is a junior at the University of South Carolina Honors College, majoring in Cardiovascular Technology on the pre-med track. As a Sponsorships Manager for TEDxCongaree Vista, Mohin is passionate about building partnerships and securing resources that create a platform where every speaker’s voice can be heard and amplified. Through this work, he hopes to bring about meaningful change within the community and beyond.
 He is actively involved in campus leadership through Delta Epsilon Psi Fraternity, Inc., Alpha Epsilon Delta, NMDP, the Indian Cultural Organization, and as an Ambassador for the College of Arts and Sciences. In addition to his leadership roles, he conducts undergraduate research in the Webb Lab, focusing on the effects of hypertension and vascular dysfunction on cardiovascular disease.`,
+    },
+    {
+      name: "Tyler Zolkos",
+      role: "Technical Producer",
+      photoUrl: Tyler,
+      bio: `Tyler Zolkos is a junior at the University of South Carolina majoring in Computer Science with a concentration in Cybersecurity. With years of experience in event production, lighting design, and graphic design, he brings both technical knowledge and creative vision to live events and visual storytelling. Tyler is passionate about using his skills in to create experiences that bring people together in Columbia.`
+    },
+    {
+      name: "Dr. Amenah Salman",
+      role: "Mentorship Director",
+      photoUrl: Amenah,
+      bio: `Amenah Salman is a full-time English professor at Midlands Technical College. She holds a PhD in Linguistics from the University of South Carolina, where she taught a variety of Linguistics and English courses from 2021 to 2025. 
+      Her research in sociophonetics and underrepresented languages focuses on dialects that reflect marginalized communities, because she believes diversity isn't just about who's in the room; it's about whose voices we amplify and whose stories we choose to prioritize. She joined the TEDxCongaree Vista curation panel and mentorship team to help drive positive change in her community and beyond.`,
     },
     {
       name: "Owen Coulam",
