@@ -135,7 +135,7 @@ export function HomePage() {
             </div>
 
             {/* Tickets CTA */}
-              <div className="mt-12 sm:mt-16 flex justify-center">
+              <div className="mt-12 sm:mt-16 flex flex-col items-center gap-6">
                 <motion.a
                   href="https://youtube.com/live/ohZBlkOXFKA?feature=share"
                   target="_blank"
@@ -167,6 +167,30 @@ export function HomePage() {
                   />
                   <span className="relative flex items-center gap-2">
                     🔴 Watch recording on YouTube
+                  </span>
+                </motion.a>
+                <motion.a
+                  href="https://www.flickr.com/photos/inspirecolumbia/albums/72177720332590194"
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ y: -2, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="
+                    relative inline-flex items-center justify-center
+                    px-10 sm:px-12 py-4
+                    rounded-full
+                    text-base sm:text-lg font-semibold tracking-wide
+                    text-black
+                    bg-white
+                    border border-white
+                    shadow-[0_8px_30px_rgba(0,0,0,0.25)]
+                    hover:bg-gray-100
+                    focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60
+                    transition-all duration-300
+                  "
+                >
+                  <span className="relative flex items-center gap-2">
+                    📷 View event photos
                   </span>
                 </motion.a>
               </div>
