@@ -40,21 +40,8 @@ export function Footer() {
             />
           </Link>
 
-          {/* Inspire Columbia Logo */}
-          <a
-            href="https://inspirecolumbia.org/"
-            className="cursor-pointer"
-            style={{ marginTop: "0.5rem", marginBottom: "2rem" }}
-          >
-            <img
-              src="/assets/InspireBlackLogo.webp"
-              alt="Inspire Columbia Logo"
-              style={{ height: "7.375rem", width: "auto" }}
-            />
-          </a>
-
           {/* Disclaimer + Copyright */}
-          <div className="mt-4">
+          <div style={{ marginTop: "2.5rem" }}>
             <p className="text-sm text-black">
               This independent TEDx event is operated under license from{" "}
               <a
@@ -67,14 +54,7 @@ export function Footer() {
             </p>
 
             <p className="text-sm text-black">
-              © 2026{" "}
-              <a
-                href="https://inspirecolumbia.org/"
-                className="!underline underline-offset-4"
-              >
-                Inspire Columbia Inc.
-              </a>
-              , a 501(c)3 nonprofit. All rights reserved.
+              © 2026 TEDxCongaree Vista Organizing Team
             </p>
           </div>
           <br></br>
