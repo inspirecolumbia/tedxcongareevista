@@ -43,8 +43,23 @@ import villaTronco from "../assets/sponsors/villaTronco.webp";
 
 
 
+type SponsorTier = {
+  tier: string;
+  // Renders the logo on its own — no white card, centered in the row.
+  bare?: boolean;
+  sponsors: { name: string; logo: string; href: string }[];
+};
+
 export function SponsorsPage() {
-  const sponsorTiers = [
+  const sponsorTiers: SponsorTier[] = [
+    {
+      tier: "Organizing Sponsor",
+      bare: true,
+      sponsors: [
+        // Served from public/assets rather than imported from src/assets/sponsors.
+        { name: "Inspire Columbia", logo: "/assets/InspireBlackLogo.webp", href: "https://inspirecolumbia.org/" },
+      ],
+    },
     {
       tier: "ChangeMaker Sponsors",
       sponsors: [
@@ -169,7 +184,13 @@ export function SponsorsPage() {
                 <h2 className="text-3xl md:text-4xl text-center text-black">{tier.tier}</h2>
               </div>
               {/* Sponsor Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+              <div
+                className={
+                  tier.bare
+                    ? "flex flex-wrap justify-center gap-6"
+                    : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"
+                }
+              >
                 {tier.sponsors.map((sponsor, index) => (
                   <motion.a
                     key={`${tier.tier}-${sponsor.name}`}
@@ -180,7 +201,18 @@ export function SponsorsPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.1 * index, duration: 0.6 }}
                     whileHover={{ y: -8 }}
-                    className={`
+                    // h-[200px]/w-[280px] and object-contain aren't in the
+                    // precompiled Tailwind build, so the bare variant uses
+                    // inline styles instead.
+                    style={
+                      tier.bare
+                        ? { height: "260px", width: "380px" }
+                        : undefined
+                    }
+                    className={
+                      tier.bare
+                        ? "flex items-center justify-center transition-all"
+                        : `
                       bg-white
                       border border-gray-200
                       rounded-xl
@@ -188,13 +220,15 @@ export function SponsorsPage() {
                       flex items-center justify-center
                       shadow-sm hover:shadow-md
                       transition-all
-                    `}
+                    `
+                    }
                   >
                     <div className="w-70 h-70 flex items-center justify-center">
                       <img
                         src={sponsor.logo}
                         alt={sponsor.name}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full ${tier.bare ? "" : "object-cover"}`}
+                        style={tier.bare ? { objectFit: "contain" } : undefined}
                         loading="lazy"
                       />
                     </div>
