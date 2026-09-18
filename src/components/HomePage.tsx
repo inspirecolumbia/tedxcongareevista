@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, Camera, CirclePlay } from "lucide-react";
+import { ArrowRight, Camera, PartyPopper } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { VideoMarquee } from "./VideoMarquee";
@@ -109,29 +109,18 @@ export function HomePage() {
 
             <div className="home-hero-actions">
               <motion.a
-                href="/speakers"
+                href="/2027"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate("/speakers");
+                  navigate("/2027");
                 }}
                 whileHover={{ y: -2, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="home-hero-button home-hero-button--primary"
               >
-                <CirclePlay size={18} />
-                Experience the talks
+                <PartyPopper size={18} />
+                Learn about TEDxCongaree Vista 2027
                 <ArrowRight size={18} />
-              </motion.a>
-              <motion.a
-                href="https://www.flickr.com/photos/inspirecolumbia/albums/72177720332590194"
-                target="_blank"
-                rel="noreferrer"
-                whileHover={{ y: -2, scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="home-hero-button home-hero-button--secondary"
-              >
-                <Camera size={17} />
-                View event photos
               </motion.a>
             </div>
           </motion.div>
@@ -171,6 +160,16 @@ export function HomePage() {
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Scenes from a day of bold ideas in the Congaree Vista.
             </p>
+            <a
+              href="https://www.flickr.com/photos/inspirecolumbia/albums/72177720332590194"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-[#E62B1E] font-semibold hover:text-[#c22419] transition-colors"
+            >
+              <Camera size={17} />
+              View event photos on Flickr
+              <ArrowRight size={16} />
+            </a>
           </div>
           <PhotoMarquee />
         </section>

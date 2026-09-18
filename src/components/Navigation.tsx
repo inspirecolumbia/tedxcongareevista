@@ -34,6 +34,7 @@ export function Navigation() {
     { id: "support", label: "Support" },
     { id: "news", label: "News" },
     { id: "about", label: "About" },
+    { id: "2027", label: "2027" },
   ];
 
   return (

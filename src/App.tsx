@@ -9,6 +9,7 @@ import { SupportPage } from "./components/SupportPage";
 import { NewsPage } from "./components/NewsPage";
 import { AboutPage } from "./components/AboutPage";
 import { AboutTEDPage } from "./components/AboutTEDPage";
+import { Coming2027Page } from "./components/Coming2027Page";
 import { Footer } from "./components/FooterPage";
 
 const SITE_TITLE = "TEDxCongaree Vista";
@@ -21,6 +22,7 @@ const PAGE_TITLES: Record<string, string> = {
   news: "News",
   about: "About",
   "about-ted": "About TED",
+  "2027": "2027",
 };
 
 export default function App() {
@@ -69,6 +71,7 @@ export default function App() {
               <Route path="/news" element={<NewsPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/about-ted" element={<AboutTEDPage />} />
+              <Route path="/2027" element={<Coming2027Page />} />
               <Route path="*" element={<HomePage />} />
             </Routes>
           </motion.div>
