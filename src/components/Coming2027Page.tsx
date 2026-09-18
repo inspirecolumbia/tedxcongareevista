@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Bell, CalendarClock, Mail, Mic, Ticket, Users } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -11,9 +11,11 @@ const SPEAKER_APPLICATION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf_Sdq
 const SPONSOR_EMAIL = "sponsorships@tedxcongareevista.com";
 const NEWSLETTER_SCRIPT_SRC = "https://tedxcongareevista.kit.com/df833b7ecf/index.js";
 const NEWSLETTER_UID = "df833b7ecf";
+const NEWSLETTER_FALLBACK_URL = "https://news.tedxcongareevista.com";
 
 export function Coming2027Page() {
   const newsletterFormRef = useRef<HTMLDivElement>(null);
+  const [newsletterUnavailable, setNewsletterUnavailable] = useState(false);
 
   useEffect(() => {
     const container = newsletterFormRef.current;
@@ -25,12 +27,32 @@ export function Coming2027Page() {
     script.async = true;
     script.src = NEWSLETTER_SCRIPT_SRC;
     script.setAttribute("data-uid", NEWSLETTER_UID);
+
+    // Kit's embed is allow-listed to the production domain, so it silently
+    // no-ops (no error event) on Vercel preview URLs. Fall back to a plain
+    // link if the form never actually renders within a few seconds.
+    const fallbackTimer = window.setTimeout(() => {
+      if (!container.querySelector(".formkit-form")) {
+        setNewsletterUnavailable(true);
+      }
+    }, 4000);
+
+    script.onerror = () => {
+      window.clearTimeout(fallbackTimer);
+      setNewsletterUnavailable(true);
+    };
+
     script.onload = () => {
-      // The hosted form template for this account ships without an email
-      // field, so add the standard Kit field the submit handler expects.
+      window.clearTimeout(fallbackTimer);
       const fields = container.querySelector(".formkit-fields");
       const submitBtn = container.querySelector(".formkit-submit");
-      if (fields && !fields.querySelector("input[name='email_address']")) {
+      if (!fields) {
+        setNewsletterUnavailable(true);
+        return;
+      }
+      // The hosted form template for this account ships without an email
+      // field, so add the standard Kit field the submit handler expects.
+      if (!fields.querySelector("input[name='email_address']")) {
         const field = document.createElement("div");
         field.className = "formkit-field";
         const input = document.createElement("input");
@@ -47,6 +69,7 @@ export function Coming2027Page() {
     container.appendChild(script);
 
     return () => {
+      window.clearTimeout(fallbackTimer);
       container.innerHTML = "";
     };
   }, []);
@@ -174,7 +197,22 @@ export function Coming2027Page() {
                 </p>
               </div>
             </div>
-            <div className="coming-2027-newsletter-form" ref={newsletterFormRef} />
+            <div
+              className="coming-2027-newsletter-form"
+              ref={newsletterFormRef}
+              style={newsletterUnavailable ? { display: "none" } : undefined}
+            />
+            {newsletterUnavailable && (
+              <a
+                href={NEWSLETTER_FALLBACK_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="coming-2027-newsletter-fallback"
+              >
+                Sign Up at news.tedxcongareevista.com
+                <ArrowRight size={16} />
+              </a>
+            )}
           </motion.div>
         </section>
 

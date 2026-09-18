@@ -113,6 +113,27 @@
   max-width: 360px;
 }
 
+.coming-2027-newsletter-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 1 1 260px;
+  max-width: 360px;
+  padding: 0.85rem 1.5rem;
+  border-radius: 9999px;
+  background: #e62b1e;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.coming-2027-newsletter-fallback:hover {
+  background: #c22419;
+}
+
 /* Reskin the Kit embed form to match the site theme without touching its markup/behavior */
 .coming-2027-newsletter-form .formkit-form {
   max-width: 100% !important;
@@ -179,7 +200,8 @@
     padding: 1.5rem;
   }
 
-  .coming-2027-newsletter-form {
+  .coming-2027-newsletter-form,
+  .coming-2027-newsletter-fallback {
     max-width: 100%;
   }
 }
