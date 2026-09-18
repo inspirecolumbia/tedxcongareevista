@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Bell, CalendarClock, Mail, Mic, Ticket, Users } from "lucide-react";
+import { ArrowRight, Bell, CalendarClock, Mail, Mic, Ticket, UserPlus, Users } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import heroImg from "../assets/2017ColumbiaSkylineTEDx.webp";
 import "./AboutPage.css";
@@ -12,6 +12,7 @@ const SPONSOR_EMAIL = "sponsorships@tedxcongareevista.com";
 const NEWSLETTER_SCRIPT_SRC = "https://tedxcongareevista.kit.com/df833b7ecf/index.js";
 const NEWSLETTER_UID = "df833b7ecf";
 const NEWSLETTER_FALLBACK_URL = "https://news.tedxcongareevista.com";
+const TEAM_APPLICATION_URL = "https://www.inspirecolumbia.org/positions/associate-2026";
 
 export function Coming2027Page() {
   const newsletterFormRef = useRef<HTMLDivElement>(null);
@@ -100,6 +101,15 @@ export function Coming2027Page() {
       variant: "outline" as const,
       icon2: Mail,
     },
+    {
+      icon: UserPlus,
+      title: "Join Our Team",
+      description:
+        "We're building our 2027 team across Finance & Legal, Tech & Web, Marketing & Press, Sponsorships & Fundraising, Speaker Curation, and Production & Operations.",
+      href: TEAM_APPLICATION_URL,
+      label: "Apply to Join Our Team",
+      variant: "outline" as const,
+    },
   ];
 
   return (
@@ -133,7 +143,7 @@ export function Coming2027Page() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Get involved */}
         <section className="py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {actions.map((action, index) => {
               const Icon2 = action.icon2 ?? ArrowRight;
               return (
